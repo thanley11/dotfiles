@@ -25,6 +25,7 @@ set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 augroup vimrc_autocmds
         autocmd!
         " highlight characters past column 120
