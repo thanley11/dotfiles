@@ -15,15 +15,16 @@ set ignorecase            " Make searches case-insensitive.
 set ruler                 " Always show info along bottom.
 set autoindent            " auto-indent
 set tabstop=4             " tab spacing
-set softtabstop=4         " unify
-set shiftwidth=4          " indent/outdent by 4 columns
-set shiftround            " always indent/outdent to the nearest tabstop
-set expandtab             " use spaces instead of tabs
-set smarttab              " use tabs at the start of a line, spaces elsewhere
-set nowrap                " don't wrap text
+set softtabstop=4         " unify                                                
+set shiftwidth=4          " indent/outdent by 4 columns                          
+set shiftround            " always indent/outdent to the nearest tabstop         
+set expandtab             " use spaces instead of tabs                           
+set smarttab              " use tabs at the start of a line, spaces elsewhere    
+set nowrap                " don't wrap text  
 set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
+let g:pymode_indent = []
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 augroup vimrc_autocmds
