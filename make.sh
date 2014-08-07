@@ -45,3 +45,5 @@ git clone https://github.com/scrooloose/nerdtree.git
 echo "Installing pymode"
 git clone git://github.com/klen/python-mode.git
 
+echo "Installing vinegar"
+git clone https://github.com/dhruvasagar/vim-vinegar.git
