@@ -6,8 +6,9 @@ h
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc"              # list of files/folders to symlink in homedir
-#vim zshrc oh-my-zsh              # other options  
+files="vimrc"              # list of files/folders to symlink in homedir
+#bashrc vim zshrc oh-my-zsh              # other options  
+bundle="~/.vim/bundle"
 ##########
 
 # create dotfiles_old in homedir
@@ -27,3 +28,20 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+# Install Pathogen - May change in the future
+echo "Installing pathogen"
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# Install pymode and NerdTree by cloning their repos into ~/.vim/bundle
+echo "Changing to $bundle directory"
+cd $bundle
+echo "...done"
+
+echo "Installing NerdTree"
+git clone https://github.com/scrooloose/nerdtree.git
+
+echo "Installing pymode"
+git clone git://github.com/klen/python-mode.git
+

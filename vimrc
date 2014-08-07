@@ -13,24 +13,19 @@ set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
 set ruler                 " Always show info along bottom.
-set autoindent            " auto-indent
-set tabstop=4             " tab spacing
-set softtabstop=4         " unify                                                
-set shiftwidth=4          " indent/outdent by 4 columns                          
-set shiftround            " always indent/outdent to the nearest tabstop         
-set expandtab             " use spaces instead of tabs                           
-set smarttab              " use tabs at the start of a line, spaces elsewhere    
 set nowrap                " don't wrap text  
+set tabstop=4             " tab spacing
+set shiftwidth=4          " indent/outdent by 4 columns                          
+set smarttab              " use tabs at the start of a line, spaces elsewhere    
+set expandtab             " use spaces instead of tabs                           
+set autoindent            " auto-indent
 set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
-let g:pymode_indent = []
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
-augroup vimrc_autocmds
-        autocmd!
-        " highlight characters past column 120
-        autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-        autocmd FileType python match Excess /\%120v.*/
-        autocmd FileType python set nowrap
-        augroup END
+let g:pymode_rope = 1
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+im :<CR> :<CR>
+
