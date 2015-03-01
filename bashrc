@@ -1,11 +1,56 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects/
+export PROJECT_HOME=$HOME/Python
 source /usr/local/bin/virtualenvwrapper.sh
-      ~                                               
+
+# Show diskspace for directories
+alias diskspace="du -S | sort -n -r |less"
+
+#Mplayer fullscreen command
+alias mp="mplayer -fs"
+
+# Directory navigation aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Search Aliases
+
+# Search cmd line history
+alias h="history|grep "
+# Find in current dir and subdirs
+alias f="find . |grep "
+# Search running processes
+alias p="ps aux |grep "
+
+#Extract any file
+extract () {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1        ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1       ;;
+            *.rar)       rar x $1     ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xf $1        ;;
+            *.tbz2)      tar xjf $1      ;;
+            *.tgz)       tar xzf $1       ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1    ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
 # If not running interactively, don't do anything
+
 case $- in
     *i*) ;;
       *) return;;
@@ -46,7 +91,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -59,8 +104,17 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+#PROMPT COLORS
+BGREEN='\[\033[01;32m\]'
+GREEN='\[\033[0;32m\]'
+BRED='\[\033[1;31m\]'
+RED='\[\033[0;31m\]'
+BBLUE='\[\033[1;34m\]'
+BLUE='\[\033[0;34m\]'
+NORMAL='\[\033[00m\]'
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\h ${RED}\$ ${NORMAL}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
