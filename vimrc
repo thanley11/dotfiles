@@ -2,6 +2,7 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
+set runtimepath^=~/.vim/bundle/ctrlp.vim  " ctrl-p runtime path
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
@@ -23,9 +24,11 @@ set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
 map <F2> :NERDTreeToggle<CR>
+let mapleader ="\<Space>"
+"let g:user_emmet_leader_key='<C-E>' "Use Ctrl-Z , with cursor after text
 let NERDTreeIgnore = ['\.pyc$']
-let g:pymode_rope = 1
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
+"let g:pymode_rope = 1
+"let g:pymode_doc = 1
+"let g:pymode_doc_key = 'K'
 im :<CR> :<CR>
 
