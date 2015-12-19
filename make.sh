@@ -47,3 +47,15 @@ git clone git://github.com/klen/python-mode.git
 
 echo "Installing vinegar"
 git clone https://github.com/dhruvasagar/vim-vinegar.git
+
+echo "Installing syntastic"
+git clone https://github.com/scrooloose/syntastic.git
+
+echo "Installing nerdcommenter"
+git clone https://github.com/scrooloose/nerdcommenter.git
+
+echo "Installing emmet"
+git clone https://github.com/mattn/emmet-vim.git
+
+echo "Installing ctrl-p"
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
