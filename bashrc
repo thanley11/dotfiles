@@ -5,6 +5,8 @@
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
 source /usr/local/bin/virtualenvwrapper.sh
+source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
+
 
 # Show diskspace for directories
 alias diskspace="du -S | sort -n -r |less"
@@ -113,10 +115,17 @@ BBLUE='\[\033[1;34m\]'
 BLUE='\[\033[0;34m\]'
 NORMAL='\[\033[00m\]'
 
+# Add git branch if its present to PS1
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\h ${RED}\$ ${NORMAL}"
+    #PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\h ${RED}\$ ${NORMAL}"
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 unset color_prompt force_color_prompt
 

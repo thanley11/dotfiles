@@ -59,3 +59,9 @@ git clone https://github.com/mattn/emmet-vim.git
 
 echo "Installing ctrl-p"
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
+
+echo "Installing gruvbox"
+git clone https://github.com/morhetz/gruvbox.git
+
+echo "Installing airline"
+git clone https://github.com/bling/vim-airline.git

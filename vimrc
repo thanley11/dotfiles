@@ -6,7 +6,9 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim  " ctrl-p runtime path
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme desert        " set colorscheme
+"colorscheme desert        " set colorscheme
+colorscheme gruvbox       " set colorscheme
+set bg=dark               " Setting dark mode for gruvbox
 set number                " show line numbers
 set laststatus=2          " last window always has a statusline
 filetype indent on        " activates indenting for files
@@ -24,7 +26,9 @@ set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
 map <F2> :NERDTreeToggle<CR>
-let mapleader ="\<Space>"
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
+let mapleader = "\<Space>"
 "let g:user_emmet_leader_key='<C-E>' "Use Ctrl-Z , with cursor after text
 let NERDTreeIgnore = ['\.pyc$']
 "let g:pymode_rope = 1
