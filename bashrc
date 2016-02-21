@@ -4,7 +4,7 @@
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
 
 

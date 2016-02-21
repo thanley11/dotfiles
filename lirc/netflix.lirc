@@ -1,0 +1,54 @@
+#### BEGIN CurrentWindow - NETFLIX CONTROLS
+begin
+    prog = irxevent
+    button = KEY_PAUSE
+    repeat = 0
+    # String 'pause' is sent to keysender/linux/chromium.sh
+    config = pause
+end
+begin
+    prog = irxevent
+    button = KEY_PLAY
+    repeat = 0
+    config = play 
+end
+begin
+    prog = irxevent
+    button = KEY_NEXT
+    config = up
+end
+begin
+    prog = irxevent
+    button = KEY_AGAIN
+    config = down 
+end
+begin
+    prog = irxevent
+    button = KEY_REWIND
+    config = left 
+end
+begin
+    prog = irxevent
+    button = KEY_FORWARD
+    config = right 
+end
+begin
+    prog = irxevent
+    button = KEY_STOP
+    repeat = 0
+    config = close
+end
+begin
+    prog = irxevent
+    button = KEY_1
+    repeat = 0
+    config = toggle_sub0
+end
+begin
+    prog = irxevent
+    button = KEY_2
+    repeat = 0
+    config = toggle_sub1
+end
+
+#### END CurrentWindow - NETFLIX CONTROLS
