@@ -4,7 +4,6 @@
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
-source /usr/bin/virtualenvwrapper.sh
 source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
 
 
@@ -13,6 +12,9 @@ alias diskspace="du -S | sort -n -r |less"
 
 #Mplayer fullscreen command
 alias mp="mplayer -fs"
+
+# Platinum Search Alias
+alias ag="pt"
 
 # Directory navigation aliases
 alias ..='cd ..'
