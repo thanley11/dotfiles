@@ -28,6 +28,10 @@ set clipboard=unnamedplus
 set vb t_vb=
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+set wildignore+=*/node_modules/*,*.so,*.swp,*.zip 
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
@@ -45,3 +49,8 @@ hi MatchParen cterm=none ctermbg=none ctermfg=white
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " select all mapping
 noremap <leader>a ggVG
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\v[\/]\.(node_modules)$',
+  "\ 'file': '\v\.(dll)$',
+  "\ }
+

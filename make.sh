@@ -65,3 +65,9 @@ git clone https://github.com/morhetz/gruvbox.git
 
 echo "Installing airline"
 git clone https://github.com/bling/vim-airline.git
+
+echo "Installing typescript-vimt"
+git clone https://github.com/leafgarland/typescript-vim.git
+
+echo "Installing ack.vim"
+git clone https://github.com/mileszs/ack.vim.git
