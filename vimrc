@@ -68,6 +68,6 @@ nnoremap <C-Down> <C-w>-
 nnoremap <C-Left> <C-w><
 nnoremap <C-Right> <C-w>>
 
-map <F3> :mksession! /home/tom/.vim_sessions/.vim_session <cr> " Quick write session with F2
-map <F4> :source /home/tom/.vim_sessions/.vim_session <cr>     " And load session with F3
+map <F3> :mksession! /home/tom/.vimsessions/.vimsession <cr> " Quick write session with F2
+map <F4> :source /home/tom/.vimsessions/.vimsession <cr>     " And load session with F3
 
