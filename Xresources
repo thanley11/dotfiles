@@ -49,7 +49,7 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 URxvt.iso14755: False
 !URxvt.perl-ext-common:     matcher,resize-font,foo,clipboard
-URxvt.perl-ext-common:     default,clipboard
+URxvt.perl-ext-common:     default,clipboard,matcher
 
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger:  C-Up
