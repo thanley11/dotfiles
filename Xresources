@@ -10,10 +10,10 @@ URxvt*scrollTtyKeypress:  true
 URxvt*urgentOnBell:       true
 URxvt*fading:              30
 
-URxvt.font: xft:Fira Mono:pixelsize=14,style=regular
-URxvt.boldFont: xft:Fira Mono:pixelsize=14,style=bold
-URxvt.italicFont: xft:Fira Mono:pixelsize=14,style=bold
-URxvt.boldItalicFont: xft:Fira Mono:pixelsize=14,style=bold
+URxvt.font: xft:Fira Mono:pixelsize=12,style=regular
+URxvt.boldFont: xft:Fira Mono:pixelsize=12,style=bold
+URxvt.italicFont: xft:Fira Mono:pixelsize=12,style=bold
+URxvt.boldItalicFont: xft:Fira Mono:pixelsize=12,style=bold
 
 URxvt.letterSpace:         -1
 

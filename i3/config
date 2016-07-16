@@ -197,6 +197,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id /usr/bin/xfce4-power-manager
 exec compton -CGb 
+exec --no-startup-id redshift 
 #exec nautilus
 #exec --no-startup-id nm-applet
 exec_always feh --bg-scale /home/tom/Pictures/Lombok.jpg
