@@ -46,6 +46,10 @@ URxvt.letterSpace:         -1
 
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
 
 URxvt.iso14755: False
 !URxvt.perl-ext-common:     matcher,resize-font,foo,clipboard

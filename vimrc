@@ -55,14 +55,14 @@ noremap <leader>a ggVG
   "\ }
 " Urxvt mappings - Find for terminal (in insert) Ctrl-V [Command] 
 " i.e Ctrl-V Ctrl + Up = > Oa means Esc O a
-map <ESC>Oa <C-Up>
-map <ESC>Ob <C-Down>
-map <ESC>Od <C-Left>
-map <ESC>Oc <C-Right>
-map! <ESC>Oa <C-Up>
-map! <ESC>Ob <C-Down>
-map! <ESC>Od <C-Left>
-map! <ESC>Oc <C-Right>
+"map <ESC>Oa <C-Up>
+"map <ESC>Ob <C-Down>
+"map <ESC>Od <C-Left>
+"map <ESC>Oc <C-Right>
+"map! <ESC>Oa <C-Up>
+"map! <ESC>Ob <C-Down>
+"map! <ESC>Od <C-Left>
+"map! <ESC>Oc <C-Right>
 nnoremap <C-Up> <C-w>+
 nnoremap <C-Down> <C-w>-
 nnoremap <C-Left> <C-w><

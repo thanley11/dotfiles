@@ -115,6 +115,26 @@ BBLUE='\[\033[1;34m\]'
 BLUE='\[\033[0;34m\]'
 NORMAL='\[\033[00m\]'
 
+#PS1=
+#PSCol=
+#if [ $HOSTNAME == 'moving-computer-of-doom' ]; then
+    #PSCol="$Cya"                # For Main Computer
+#elif [ $HOSTTYPE == 'arm' ]; then
+    #PSCol="$Gre"                # For pi
+#elif [ $HOSTNAME == 'ma.sdf.org' ]; then
+    #PSCol="$Blu"                # For MetaArray
+#elif [[ $MACHTYPE =~ arm-apple-darwin ]]; then
+    #PSCol="$Gre"                # For iOS
+#elif [ $MACHTYPE == 'i486-pc-linux-gnu' ]; then
+    #PSCol="$Whi"                # For Netbook
+#elif [[ "$MACHTYPE" == "x86_64--netbsd" && "$OSTYPE" == "netbsd" ]]; then
+    #PSCol="$Yel"                # For Main Cluster
+#else
+    #PS1+="\h "              # Un-designated catch-all
+#fi
+
+#PS1+="${PSCol}\W ->${RCol} "
+
 # Add git branch if its present to PS1
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -122,6 +142,7 @@ parse_git_branch() {
 
 if [ "$color_prompt" = yes ]; then
     #PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\h ${RED}\$ ${NORMAL}"
+    #PS1="${debian_chroot:+($debian_chroot)}${BGREEN}\u@\h${NORMAL}:${BLUE}\w${RED}$(parse_git_branch)${NORMAL}\$ "
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
 else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -178,3 +199,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+
