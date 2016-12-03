@@ -20,6 +20,7 @@
       <u>togglefullscreen</u>
       <!-- Red (My Videos) -->
       <t>XBMC.ActivateWindow(Favourites)</t>
+      <r>reloadkeymaps</r>
       <!-- Record -->
     </keyboard>
   </global>
@@ -41,7 +42,8 @@
   </fullscreenvideo>
    <FullscreenLiveTV>
 	<keyboard>
-	<left>StepBack</left>
+      <n>Seek(210)</n>
+      <left>StepBack</left>
       <right>StepForward</right>
       <up>BigStepForward</up>
       <down>BigStepBack</down>

@@ -1,0 +1,24 @@
+<playercorefactory>
+ <players>
+  <player name="mpv" type="ExternalPlayer" audio="false" video="true">
+      <filename>"$HOME/Scripts/kodi/rip-mpv"</filename>
+     <args>"{0}"</args>
+     <hidexbmc>true</hidexbmc>
+   </player>  
+ <player name="save url" type="ExternalPlayer" audio="false" video="true">
+		<filename>printf</filename>
+     <args>"%s\n" "{0}" > "$HOME/Videos/video-url-$(date +"%Y-%m-%d-%H-%M-%S").txt"</args>
+     <hidexbmc>false</hidexbmc>
+   </player>
+   <player name="mpv - capture" type="ExternalPlayer" audio="false" video="true">
+		<filename>mpv</filename>
+     <args>"{0}" --stream-capture="$HOME/Videos/video-$(date +"%Y-%m-%d-%H-%M-%S").mkv"</args>
+     <hidexbmc>true</hidexbmc>
+   </player>
+   <player name="mpv - dump" type="ExternalPlayer" audio="false" video="true">
+		<filename>mpv</filename>
+     <args>"{0}" --stream-dump="$HOME/Videos/video-$(date +"%Y-%m-%d-%H-%M-%S").mkv" &</args>
+     <hidexbmc>false</hidexbmc>
+   </player>
+ </players>
+</playercorefactory>

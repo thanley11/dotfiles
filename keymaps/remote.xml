@@ -7,8 +7,14 @@
       <mymusic>XBMC.ActivateWindow(MusicLibrary, Artists)</mymusic>
       <star>togglefullscreen</star>
       <record>XBMC.ActivateWindow(Favourites)</record>
-      <clear>PreviousMenu</clear>
+      <back>Back</back>
+      <clear>Close</clear>
+      <info>ContextMenu</info>
+      <title>ActivateWindow(TVGuide)</title>
     </remote>
+ <!--   <universalremote>-->
+        <!--<obc2>ActivateWindow(TVChannels)</obc2>-->
+    <!--</universalremote>-->
   </global>
   <fullscreenvideo>
       <remote>
@@ -16,6 +22,7 @@
           <back>smallstepback</back>
           <mymusic>showsubtitles</mymusic>
           <liveradio>showtime</liveradio>
+          <title>OSD</title>
       </remote>
   </fullscreenvideo>
   <FullscreenLiveTV>
@@ -25,8 +32,35 @@
       <up>BigStepForward</up>
       <down>BigStepBack</down>
 	  <myvideo>ActivateWindow(TVRecordings,pvr://recordings/Default) </myvideo>
-      <liveradio>XBMC.ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</liveradio>
-      <mypictures>XBMC.ActivateWindowAndFocus(PVR, 35,0, 14,0)</mypictures>
+      <liveradio>showtime</liveradio>
+      <title>ActivateWindow(TVGuide)</title>
     </remote>
   </FullscreenLiveTV>
+  <TVGuide>
+    <remote>
+       <title>PreviousMenu</title>
+       <back>PreviousMenu</back>
+       <info>ContextMenu</info>
+    </remote>
+  </TVGuide>
+  <TVTimers>
+    <remote>
+       <back>PreviousMenu</back>
+    </remote>
+  </TVTimers>
+  <TVRecordings>
+    <remote>
+       <back>PreviousMenu</back>
+    </remote>
+  </TVRecordings> 
+  <Favourites>
+    <remote>
+       <record>PreviousMenu</record>
+    </remote>
+  </Favourites> 
+  <VideoOSD>
+    <remote>
+       <title>PreviousMenu</title>
+    </remote>
+  </VideoOSD>
 </keymap>

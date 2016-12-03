@@ -26,9 +26,9 @@ set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
 map <F2> :NERDTreeToggle<CR>
+map <Space> <leader>
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
-let mapleader = "\<Space>"
 "let g:user_emmet_leader_key='<C-E>' "Use Ctrl-Z , with cursor after text
 let NERDTreeIgnore = ['\.pyc$']
 "let g:pymode_rope = 1

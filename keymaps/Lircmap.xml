@@ -1,5 +1,5 @@
 <lircmap>
-    <remote device="mceusb">
+    <remote device="devinput">
             <play>Play</play>
             <pause>Pause</pause>
             <stop>Stop</stop>
@@ -13,9 +13,9 @@
             <pageplus>ChanUp</pageplus>
             <pageminus>ChanDown</pageminus>
             <back>KEY_BACK</back>
-            <menu>KEY_EPG</menu>
-            <title>More</title>
-            <info></info>
+            <menu>KEY_BLUE</menu>  <!--menu -->
+            <title>KEY_EPG</title> <!--guide -->
+            <info>KEY_INFO</info>  <!--info -->
             <skipplus>Skip</skipplus>
             <skipminus>Replay</skipminus>
             <display></display>
@@ -41,11 +41,11 @@
             <zero>Zero</zero>
             <mymusic>KEY_AUDIO</mymusic>
             <myvideo>KEY_VIDEO</myvideo>
-            <mypictures>KEY_IMAGES</mypictures>
-            <xbox>RecTV</xbox>
+            <mypictures>KEY_CAMERA</mypictures>
             <star>KEY_ENTER</star>
             <clear>KEY_NUMERIC_POUND</clear>
-            <red>BB2</red>
-            <blue>KEY_TEXT</blue>
+            <!--<obc1>KEY_TITLE</obc1>-->
+            <!--<obc2>KEY_SUBTITLE</obc2>-->
+            <back>KEY_EXIT</back>
     </remote>
 </lircmap>
