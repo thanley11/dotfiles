@@ -80,3 +80,6 @@ git clone https://github.com/leafgarland/typescript-vim.git
 
 echo "Installing ack.vim"
 git clone https://github.com/mileszs/ack.vim.git
+
+echo "Installing vim-fsharp"
+git clone https://github.com/fsharp/vim-fsharp.git

@@ -44,7 +44,18 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:pymode_doc = 1
 "let g:pymode_doc_key = 'K'
 im :<CR> :<CR>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
+let g:fsharpbinding_debug = 1
+let g:syntastic_enable_signs=1     " enables error reporting in the gutter
 "let g:syntastic_javascript_jshint_exec='C:\Users\hanleyt\AppData\Roaming\npm\jshint.cmd' 
 "sets the tag highlighting to be white no background
 hi MatchParen cterm=none ctermbg=none ctermfg=white 
@@ -70,6 +81,7 @@ nnoremap <C-Up> <C-w>+
 nnoremap <C-Down> <C-w>-
 nnoremap <C-Left> <C-w><
 nnoremap <C-Right> <C-w>>
+imap jk <Esc>
 
 map <F3> :mksession! /home/tom/.vimsessions/.vimsession <cr> " Quick write session with F2
 map <F4> :source /home/tom/.vimsessions/.vimsession <cr>     " And load session with F3
