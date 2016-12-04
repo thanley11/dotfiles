@@ -5,6 +5,11 @@
      <args>"{0}"</args>
      <hidexbmc>true</hidexbmc>
    </player>  
+ <!-- <player name="rtmpdump" type="ExternalPlayer" audio="false" video="true">-->
+      <!--<filename>/usr/bin/rtmpdump</filename>-->
+      <!--<args>-i "{0}"</args>-->
+     <!--<hidexbmc>true</hidexbmc>-->
+   <!--</player>-->
  <player name="save url" type="ExternalPlayer" audio="false" video="true">
 		<filename>printf</filename>
      <args>"%s\n" "{0}" > "$HOME/Videos/video-url-$(date +"%Y-%m-%d-%H-%M-%S").txt"</args>
@@ -20,5 +25,35 @@
      <args>"{0}" --stream-dump="$HOME/Videos/video-$(date +"%Y-%m-%d-%H-%M-%S").mkv" &</args>
      <hidexbmc>false</hidexbmc>
    </player>
+   <player name="vlc" type="ExternalPlayer" audio="false" video="true">
+       <filename>"$HOME/Scripts/kodi/rip-vlc"</filename>
+     <args>"{0}"</args>
+     <hidexbmc>true</hidexbmc>
+   </player>
+   <player name="vlc - record" type="ExternalPlayer" audio="false" video="true">
+	<filename>vlc</filename>
+	<args>"{0}" --sout=file/ts:"$HOME/Videos/video-$(date +"%Y-%m-%d-%H-%M-%S").mkv" &</args>
+	<hidexbmc>false</hidexbmc>
+   </player>
+   <player name="record" type="ExternalPlayer" audio="false" video="true">
+       <filename>"$HOME/Scripts/kodi/rip-record"</filename>
+     <args>"{0}" &</args>
+     <hidexbmc>false</hidexbmc>
+   </player>  
+   <player name="record 30 mins" type="ExternalPlayer" audio="false" video="true">
+	<filename>"$HOME/Scripts/kodi/rip-record"</filename>
+     <args>"{0}" -t 00:30:00 &</args>
+     <hidexbmc>false</hidexbmc>
+   </player> 
+   <player name="record 1 hour" type="ExternalPlayer" audio="false" video="true">
+	<filename>"$HOME/Scripts/kodi/rip-record"</filename>
+     <args>"{0}" -t 01:00:00 &</args>
+     <hidexbmc>false</hidexbmc>
+   </player> 
+   <player name="record 2 hours" type="ExternalPlayer" audio="false" video="true">
+	<filename>"$HOME/Scripts/kodi/rip-record"</filename>
+     <args>"{0}" -t 02:00:00 &</args>
+     <hidexbmc>false</hidexbmc>
+   </player> 
  </players>
 </playercorefactory>

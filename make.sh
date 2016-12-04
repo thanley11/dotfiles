@@ -6,7 +6,7 @@ h
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc bashrc"              # list of files/folders to symlink in homedir
+files="vimrc bashrc Xresources xinitrc"              # list of files/folders to symlink in homedir
 #bashrc vim zshrc oh-my-zsh              # other options  
 bundle=~/.vim/bundle
 ##########
@@ -28,6 +28,15 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+echo "Creating symlinks for i3"
+ln -s $dir/i3/i3status.conf ~/.i3status.conf
+ln -s $dir/i3/config ~/.config/i3/config
+
+echo "Creating symlinks for mpv"
+ln -s $dir/mpv/input.conf ~/.config/mpv/input.conf
+ln -s $dir/mpv/lua-settings ~/.config/mpv/lua-settings
+ln -s $dir/mpv/mpv.conf ~/.config/mpv/mpv.conf
 
 # Install Pathogen - May change in the future
 echo "Installing pathogen"
@@ -65,3 +74,9 @@ git clone https://github.com/morhetz/gruvbox.git
 
 echo "Installing airline"
 git clone https://github.com/bling/vim-airline.git
+
+echo "Installing typescript-vimt"
+git clone https://github.com/leafgarland/typescript-vim.git
+
+echo "Installing ack.vim"
+git clone https://github.com/mileszs/ack.vim.git
