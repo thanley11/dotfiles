@@ -1,4 +1,4 @@
-# Export the dbus session address on startup so it can be used by any other environment
+# Export the dbus session address on startup so it can be used 
 sleep 5
 touch $HOME/.Xdbus
 chmod 600 $HOME/.Xdbus
@@ -7,3 +7,4 @@ echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.Xdbus
 # Export XAUTHORITY value on startup so it can be used by cron
 env | grep XAUTHORITY >> $HOME/.Xdbus
 echo 'export XAUTHORITY' >> $HOME/.Xdbus
+
