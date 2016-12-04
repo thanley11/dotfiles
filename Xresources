@@ -11,7 +11,7 @@ URxvt*urgentOnBell:       true
 URxvt*fading:              30
 URxvt*buffered:           false
 
-xterm*faceName: ixft:Inconsolata:size=14:antialias=false
+xterm*faceName: ixft:Inconsolata:size=13:antialias=false
 !URxvt.font: xft:Fira Mono:pixelsize=12,style=regular
 !URxvt.boldFont: xft:Fira Mono:pixelsize=12,style=bold
 !URxvt.italicFont: xft:Fira Mono:pixelsize=12,style=bold

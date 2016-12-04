@@ -44,13 +44,15 @@ im :<CR> :<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 let g:fsharpbinding_debug = 1
+let g:syntastic_enable_signs=1     " enables error reporting in the gutter
 "let g:syntastic_javascript_jshint_exec='C:\Users\hanleyt\AppData\Roaming\npm\jshint.cmd' 
 "sets the tag highlighting to be white no background
 hi MatchParen cterm=none ctermbg=none ctermfg=white 
