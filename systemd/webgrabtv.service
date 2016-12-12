@@ -1,0 +1,11 @@
+[Unit]
+Description=Downloads TV Guide data using WebGrabPlus
+
+[Service]
+Type=oneshot
+User=mythtv
+Group=mythtv
+ExecStart=/opt/wg++/update.sh
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Run webgrabplus to retrieve TV Guide data daily 
+
+[Timer]
+OnCalendar=2:00/14:00
+Persistent=true     
+ 
+[Install]
+WantedBy=timers.target

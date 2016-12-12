@@ -1,0 +1,21 @@
+begin
+    prog = irexec
+    button = KEY_TITLE
+    config = /home/tom/Scripts/football.sh Chromium
+    #config = echo "You just pressed 'KEY_TITLE'!" > /home/tom/test.log
+    repeat = 0
+end
+
+#begin
+#    prog = irexec
+#    button = KEY_NUMERIC_STAR
+#    config = /home/tom/Scripts/football.sh Firefox
+#    repeat = 0
+#end
+#
+begin
+    prog = irexec
+    button = KEY_SUBTITLE
+    config = /home/tom/Scripts/football.sh Kodi
+    repeat = 0
+end

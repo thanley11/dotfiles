@@ -10,6 +10,12 @@
       <!--<args>-i "{0}"</args>-->
      <!--<hidexbmc>true</hidexbmc>-->
    <!--</player>-->
+   <player name="youtube-dl" type="ExternalPlayer" audio="false" video="true">
+		<filename>youtube-dl</filename>
+        <args>-o "$HOME/Videos/" {0}</args>
+     <hidexbmc>false</hidexbmc>
+   </player>
+
  <player name="save url" type="ExternalPlayer" audio="false" video="true">
 		<filename>printf</filename>
      <args>"%s\n" "{0}" > "$HOME/Videos/video-url-$(date +"%Y-%m-%d-%H-%M-%S").txt"</args>
