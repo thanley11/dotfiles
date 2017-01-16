@@ -21,7 +21,7 @@
           <myvideo>AspectRatio</myvideo>
           <back>smallstepback</back>
           <mymusic>showsubtitles</mymusic>
-          <mypictures>Seek(125)</mypictures>
+          <mypictures>Seek(123)</mypictures>
           <liveradio>showtime</liveradio>
           <title>OSD</title>
       </remote>
@@ -35,7 +35,7 @@
 	  <myvideo>ActivateWindow(TVRecordings,pvr://recordings/Default) </myvideo>
       <liveradio>showtime</liveradio>
       <title>ActivateWindow(TVGuide)</title>
-      <mypictures>Seek(125)</mypictures>
+      <mypictures>Seek(123)</mypictures>
     </remote>
   </FullscreenLiveTV>
   <TVGuide>
