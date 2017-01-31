@@ -26,6 +26,7 @@ set autoindent            " auto-indent
 set colorcolumn=81
 set clipboard=unnamedplus
 set vb t_vb=
+set relativenumber
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 if executable('ag')
@@ -34,6 +35,7 @@ endif
 set wildignore+=*/node_modules/*,*.so,*.swp,*.zip 
 map <F2> :NERDTreeToggle<CR>
 map <Space> <leader>
+let g:paredit_mode = 1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 "let g:user_emmet_leader_key='<C-E>' "Use Ctrl-Z , with cursor after text
@@ -45,17 +47,33 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:pymode_doc_key = 'K'
 im :<CR> :<CR>
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-au BufRead,BufNewFile *.ts        setlocal filetype=typescript
-set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
-let g:fsharpbinding_debug = 1
-let g:syntastic_enable_signs=1     " enables error reporting in the gutter
+"au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+"set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
+autocmd! BufWritePost * Neomake " Add BufEnter to run on ever entry
+let g:neomake_verbose=3
+let g:neomake_logfile='/home/tom/tmp/error.log'
+let g:neomake_open_list = 2
+"let g:neomake_warning_sign = {
+  "\ 'text': 'W',
+  "\ 'texthl': 'WarningMsg',
+  "\ }
+"let g:neomake_error_sign = {
+  "\ 'text': 'E',
+  "\ 'texthl': 'ErrorMsg',
+  "\ }
+let g:neomake_python_enabled_makers = ['pylint', 'pep8']
+let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
+let g:neomake_javascript_enabled_makers = ['flow']
+nnoremap <leader>ne :ll<CR>
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['jshint']
+"let g:fsharpbinding_debug = 1
+"let g:syntastic_enable_signs=1     " enables error reporting in the gutter
 "let g:syntastic_javascript_jshint_exec='C:\Users\hanleyt\AppData\Roaming\npm\jshint.cmd' 
 "sets the tag highlighting to be white no background
 hi MatchParen cterm=none ctermbg=none ctermfg=white 

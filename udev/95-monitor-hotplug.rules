@@ -1,0 +1,2 @@
+#Rule for executing commands when an external screen is plugged in.
+KERNEL=="card0", ACTION=="change", RUN+="/home/tom/Scripts/monitor-hotplug.sh"

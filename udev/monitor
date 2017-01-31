@@ -1,0 +1,3 @@
+#symlink to /etc/acpi/events
+event=button/lid
+action=/etc/acpi/actions/monitor-hotplug.sh
