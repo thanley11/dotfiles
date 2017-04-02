@@ -50,6 +50,10 @@ set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 "au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+nnoremap <leader>rr :TsuReferences<CR>
+nnoremap <leader>dd :TsuDefinition<CR>
+nnoremap <leader>ii :TsuImport<CR>
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 "set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
 autocmd! BufWritePost * Neomake " Add BufEnter to run on ever entry
 let g:neomake_verbose=3
@@ -67,6 +71,7 @@ let g:neomake_python_enabled_makers = ['pylint', 'pep8']
 let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_javascript_enabled_makers = ['flow']
 nnoremap <leader>ne :ll<CR>
+let g:pymode_lint_ignore="E501,W601"
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
@@ -103,4 +108,12 @@ imap jk <Esc>
 
 map <F3> :mksession! /home/tom/.vimsessions/.vimsession <cr> " Quick write session with F2
 map <F4> :source /home/tom/.vimsessions/.vimsession <cr>     " And load session with F3
-
+" toggle between number and relativenumber
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
