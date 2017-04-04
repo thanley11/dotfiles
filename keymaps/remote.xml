@@ -22,7 +22,7 @@
           <back>smallstepback</back>
           <mymusic>showsubtitles</mymusic>
           <mypictures>Seek(123)</mypictures>
-          <liveradio>showtime</liveradio>
+          <liveradio>ShowTime</liveradio>
           <title>OSD</title>
       </remote>
   </fullscreenvideo>
@@ -33,7 +33,7 @@
       <up>BigStepForward</up>
       <down>BigStepBack</down>
 	  <myvideo>ActivateWindow(TVRecordings,pvr://recordings/Default) </myvideo>
-      <liveradio>showtime</liveradio>
+      <liveradio>ShowTime</liveradio>
       <title>ActivateWindow(TVGuide)</title>
       <mypictures>Seek(123)</mypictures>
     </remote>
