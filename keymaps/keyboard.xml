@@ -1,16 +1,16 @@
 <keymap>
   <global>
     <keyboard>
-      <z>XBMC.ActivateWindow(VideoLibrary, MovieTitles)</z>
+      <z>ActivateWindow(Videos, MovieTitles)</z>
       <!-- Yellow (My TV)-->
       <e mod="ctrl"></e>
       <!-- Blue(My Music) 
       <i mod="ctrl">ActivateWindow(Videos,addons://sources/video/)</i>-->
       <l>ActivateWindow(Videos, Addons)</l>
       <!-- Info(Recorded TV) -->
-      <k>XBMC.ActivateWindow(MusicLibrary, Artists)</k>
+      <k>ActivateWindow(Music, Artists)</k>
       <!--  (E)-->
-      <g>XBMC.ActivateWindow(Videos, TVShowTitles)</g>
+      <g>ActivateWindow(Videos, TVShowTitles)</g>
       <!-- Green (My Pictures) -->
       <c>ContextMenu</c>
       <!-- Menu (Guide)-->

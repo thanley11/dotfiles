@@ -2,9 +2,9 @@
   <global>
     <remote>
       <mypictures>ActivateWindow(Videos, Addons)</mypictures>
-      <liveradio>XBMC.ActivateWindow(Videos, TVShowTitles)</liveradio>
-      <myvideo>XBMC.ActivateWindow(VideoLibrary, MovieTitles)</myvideo>
-      <mymusic>XBMC.ActivateWindow(MusicLibrary, Artists)</mymusic>
+      <liveradio>ActivateWindow(Videos, TVShowTitles)</liveradio>
+      <myvideo>ActivateWindow(Videos, MovieTitles)</myvideo>
+      <mymusic>ActivateWindow(Music, Artists)</mymusic>
       <star>togglefullscreen</star>
       <record>XBMC.ActivateWindow(Favourites)</record>
       <back>Back</back>

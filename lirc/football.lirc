@@ -6,13 +6,13 @@ begin
     repeat = 0
 end
 
-#begin
-#    prog = irexec
-#    button = KEY_NUMERIC_STAR
-#    config = /home/tom/Scripts/football.sh Firefox
-#    repeat = 0
-#end
-#
+begin
+    prog = irexec
+    button = KEY_NUMERIC_STAR
+    config = /home/tom/Scripts/football.sh Firefox
+    repeat = 0
+end
+
 begin
     prog = irexec
     button = KEY_SUBTITLE

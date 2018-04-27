@@ -12,7 +12,7 @@
 set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monospace 18
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -31,13 +31,13 @@ hide_edge_borders both
 new_window none
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -fullscreen -padding 300 -opacity "85" -bw 0  -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -fullscreen -padding 300 -opacity "85" -bw 0  -font "System San Francisco Display 20"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -70,8 +70,8 @@ bindsym $mod+Shift+Right move right
 
 
 # splitting horiZontal or Vertical
-bindsym $mod+Shift+z split h
-bindsym $mod+Shift+v split v
+bindsym $mod+Shift+z splith
+bindsym $mod+Shift+v splitv
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -98,12 +98,13 @@ bindsym $mod+minus scratchpad show
 
 # focus the child container
 #bindsym $mod+d focus child
-set $workspace1 "1: Terminal"
-set $workspace2 "2: Firefox"
+set $workspace1 "1: Kodi"
+set $workspace2 "2: Chrome"
 set $workspace3 "3: Files"
-set $workspace4 "4: Kodi"
+set $workspace4 "4: Terminal"
 set $workspace5 "5: Video"
-set $workspace6 "6: Code"
+set $workspace6 "6: Deluge"
+set $workspace7 "7: Pavucontrol"
 set $workspace10 "10: Music"
 
 
@@ -114,7 +115,7 @@ bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace 7
+bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $workspace10
@@ -126,17 +127,18 @@ bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-assign [class="Terminal"]   $workspace1
-assign [class="Firefox"]    $workspace2
+assign [class="Kodi"]       $workspace1
+assign [class="Chromium"]   $workspace2
 assign [class="Nautilus"]   $workspace3
-assign [class="Kodi"]       $workspace4
+assign [class="Terminator"]   $workspace4
 assign [class="mpv"]        $workspace5
-assign [class="Code"]       $workspace6
+assign [class="Deluge"]       $workspace6
+assign [class="Pavucontrol"]       $workspace7
 assign [class="Clementine"] $workspace10
 # Install xorg-xprop, then run xprop and click on window
 # Look for WM_CLASS(STRING) = "code", "Code" <- Second value
@@ -177,15 +179,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        font pango:DejaVu Sans Mono, Awesome 8
+        font pango:DejaVu Sans Mono, Awesome 15
 }
 
 bindsym $mod+shift+x exec i3lock -c 000000
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -199,27 +201,34 @@ bindsym XF86AudioPrev exec playerctl previous
 
 #Program Related
 exec_always --no-startup-id xmodmap ~/.xmodmap
-exec --no-startup-id /usr/bin/xfce4-power-manager
+#exec --no-startup-id /usr/bin/xfce4-power-manager
 exec compton -CGb 
-exec --no-startup-id redshift 
+#exec --no-startup-id redshift 
 exec --no-startup-id nm-applet
+exec_always xset s off -dpms
 
-#exec nautilus
+exec nautilus
+exec kodi
 #exec --no-startup-id nm-applet
-exec_always feh --bg-scale /home/tom/Pictures/Lombok.jpg
-bindsym $mod+Shift+f exec firefox
+#exec_always feh --bg-scale /home/tom/Pictures/Lombok.jpg
+bindsym $mod+Shift+f exec chromium
 
 ## Manual management of external displays
 ## Set the shortcuts and what they do
-set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile
+set $mode_display Ext Screen (d) Double, (s) Single
 mode "$mode_display" {
-    bindsym d exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --off --output HDMI2 --off --output HDMI1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP2 --off, mode "Default"
-    bindsym m exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
-    bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1366x768 --pos 288x1200 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP2 --off, mode "Default"
-    # back to normal: Enter or Escape
+    bindsym s exec --no-startup-id  xrandr --output HDMI-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP-1 --off --output DP-0 --off
+    bindsym d exec --no-startup-id  xrandr --output HDMI-0 --primary --mode 3840x2160 --pos 1680x0 --rotate normal --output DP-1 --off --output DP-0 --mode 1680x1050 --pos 0x0 --rotate normal   # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
+bindsym $mod+n move container to output DP-0
+bindsym $mod+m move container to output primary
+bindsym XF86HomePage exec i3-msg layout splith, move right, move down, focus up, move up, move right, focus left, focus left, focus left, move left
+#, layout splitv, focus left, move right
+#h - next to
+#v - on top of
 
+#layout splith, focus up, move down

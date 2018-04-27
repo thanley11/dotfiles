@@ -3,6 +3,7 @@ call pathogen#infect()
 call pathogen#helptags()
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
 set runtimepath^=~/.vim/bundle/ctrlp.vim  " ctrl-p runtime path
+set nofoldenable 
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
