@@ -1,5 +1,5 @@
 <lircmap>
-    <remote device="devinput-32">
+    <remote device="mceusb">
             <play>KEY_PLAY</play>
             <pause>KEY_PAUSE</pause>
             <stop>KEY_STOP</stop>
@@ -41,7 +41,7 @@
             <zero>KEY_NUMERIC_0</zero>
             <mymusic>KEY_AUDIO</mymusic>
             <myvideo>KEY_VIDEO</myvideo>
-            <mypictures>KEY_CAMERA</mypictures>
+            <mypictures>KEY_IMAGES</mypictures>
             <star>KEY_ENTER</star>
             <clear>KEY_NUMERIC_POUND</clear>
             <!--<obc1>KEY_TITLE</obc1>-->
