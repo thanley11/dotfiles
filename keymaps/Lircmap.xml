@@ -44,8 +44,8 @@
             <mypictures>KEY_IMAGES</mypictures>
             <star>KEY_ENTER</star>
             <clear>KEY_NUMERIC_POUND</clear>
-            <!--<obc1>KEY_TITLE</obc1>-->
-            <!--<obc2>KEY_SUBTITLE</obc2>-->
+            <obc1>BB2</obc1>
+            <obc2>KEY_TEXT</obc2>
             <back>KEY_EXIT</back>
     </remote>
 </lircmap>
