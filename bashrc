@@ -22,7 +22,6 @@ alias diskspace="du -S | sort -n -r |less"
 
 #Mplayer fullscreen command
 alias mp="mplayer -fs"
-
 # Directory navigation aliases
 alias ..='cd ..'
 alias ...='cd ../..'
