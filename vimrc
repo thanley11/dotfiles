@@ -51,36 +51,31 @@ set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 "au BufRead,BufNewFile *.ts        setlocal filetype=typescript
-nnoremap <leader>rr :TsuReferences<CR>
-nnoremap <leader>dd :TsuDefinition<CR>
-nnoremap <leader>ii :TsuImport<CR>
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+"Ale
+let g:ale_linters = {
+\   'typescript': ['tsserver'],
+\   'html': ['htmlhint'],
+\   'python': ['pylint', 'pep8']
+\}
+let b:ale_fixers = {'typescript': ['prettier']}
+let g:airline#extensions#ale#enabled = 1
+let g:ale_completion_enabled = 1
+let g:ale_html_htmlhint_options = '--config /home/tom/.htmlhintrc --format=unix'
+let g:ale_html_htmlhint_use_global = 1
+let g:ale_html_htmlhint_executable = '/home/tom/.npm-packages/bin/htmlhint'
+
+nnoremap <leader>r :ALEFindReferences<CR>
+nnoremap <leader>d :ALEGoToDefinition<CR>
+nnoremap <leader>t :ALEGoToDefinitionInTab<CR>
+autocmd FileType typescript nmap <buffer> <leader>i : <C-u>echo ale#hover#Show(bufnr(''), getcurpos()[1],getcurpos()[2], {})<CR>
+
+":call ale#hover#Show(bufnr(''), getcurpos()[1],
+         "\ getcurpos()[2], {})
+
 "set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
-autocmd! BufWritePost * Neomake " Add BufEnter to run on ever entry
-let g:neomake_verbose=3
-let g:neomake_logfile='/home/tom/tmp/error.log'
-let g:neomake_open_list = 2
-"let g:neomake_warning_sign = {
-  "\ 'text': 'W',
-  "\ 'texthl': 'WarningMsg',
-  "\ }
-"let g:neomake_error_sign = {
-  "\ 'text': 'E',
-  "\ 'texthl': 'ErrorMsg',
-  "\ }
-let g:neomake_python_enabled_makers = ['pylint', 'pep8']
-let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
-let g:neomake_javascript_enabled_makers = ['flow']
 nnoremap <leader>ne :ll<CR>
 let g:pymode_lint_ignore="E501,W601"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['jshint']
 "let g:fsharpbinding_debug = 1
-"let g:syntastic_enable_signs=1     " enables error reporting in the gutter
-"let g:syntastic_javascript_jshint_exec='C:\Users\hanleyt\AppData\Roaming\npm\jshint.cmd' 
 "sets the tag highlighting to be white no background
 hi MatchParen cterm=none ctermbg=none ctermfg=white 
 "Remove all trailing whitespace by pressing F5
@@ -118,3 +113,32 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
+
+function! Smart_TabComplete()
+  let line = getline('.')                         " current line
+
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+                                                  " line to one character right
+                                                  " of the cursor
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  if (strlen(substr)==0)                          " nothing to match on empty string
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1      " position of period, if any
+  let has_slash = match(substr, '\/') != -1       " position of slash, if any
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"                         " existing text matching
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"                         " file matching
+  else
+    return "\<C-X>\<C-O>"                         " plugin matching
+  endif
+endfunction
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
