@@ -1,3 +1,6 @@
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 ./home/tom/Scripts/export_x_info.sh
 /usr/bin/xcalib -d :0 /home/tom/.colorprofiles/Macbook.icc
 xcape 

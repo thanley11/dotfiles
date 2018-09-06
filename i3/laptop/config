@@ -205,6 +205,7 @@ exec --no-startup-id /usr/bin/xfce4-power-manager
 exec compton -CGb 
 exec --no-startup-id redshift 
 exec --no-startup-id nm-applet
+exec --no-startup-id /usr/bin/blueman-applet # Bluetooth Manager
 
 #exec nautilus
 #exec --no-startup-id nm-applet
