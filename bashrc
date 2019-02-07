@@ -10,8 +10,9 @@ export SSLKEYLOGFILE=$HOME/sslkeylog.log
 source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
 
 NPM_PACKAGES="${HOME}/.npm-packages"
+PIPENV="${HOME}/.local/bin"
 
-PATH="$NPM_PACKAGES/bin:$PATH"
+PATH="$PIPENV:$NPM_PACKAGES/bin:$PATH"
 
 unset MANPATH 
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"

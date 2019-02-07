@@ -204,13 +204,16 @@ exec_always --no-startup-id xmodmap ~/.xmodmap
 exec --no-startup-id /usr/bin/xfce4-power-manager
 exec compton -CGb 
 exec --no-startup-id redshift 
-exec --no-startup-id nm-applet
+exec --no-startup-id /usr/bin/blueman-applet # Bluetooth Manager
+exec --no-startup-id /usr/bin/caffeine #Screensaver disable
+exec --no-startup-id /usr/bin/lxqt-connman-applet # Wifi applet
 
 #exec nautilus
 #exec --no-startup-id nm-applet
-exec_always feh --bg-scale /home/tom/Pictures/Lombok.jpg
+exec --no-startup-id feh --bg-fill  /home/tom/Pictures/Lombok.jpg
 bindsym $mod+Shift+f exec firefox
-
+bindsym --release Insert exec scrot -s "/home/tom/Pictures/$(date '%B %d %A - %H:%M').png"
+bindsym Shift+Insert exec scrot -u "/home/tom/Pictures/$(date '+%A %B %d - %H:%M').png"
 ## Manual management of external displays
 ## Set the shortcuts and what they do
 set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile
