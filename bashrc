@@ -7,7 +7,6 @@ export COREHOST_TRACE=1
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
 export SSLKEYLOGFILE=$HOME/sslkeylog.log
-source /usr/bin/virtualenvwrapper.sh
 source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
 
 NPM_PACKAGES="${HOME}/.npm-packages"

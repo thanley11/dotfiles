@@ -5,7 +5,6 @@
       <liveradio>ActivateWindow(Videos, TVShowTitles)</liveradio>
       <myvideo>ActivateWindow(Videos, MovieTitles)</myvideo>
       <mymusic>ActivateWindow(Music, Artists)</mymusic>
-      <obc1>ActivateWindow(Videos, RecentlyAddedEpisodes)</obc1>
       <star>togglefullscreen</star>
       <record>XBMC.ActivateWindow(Favourites)</record>
       <back>Back</back>

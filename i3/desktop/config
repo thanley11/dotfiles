@@ -211,14 +211,18 @@ exec nautilus
 exec kodi
 #exec --no-startup-id nm-applet
 #exec_always feh --bg-scale /home/tom/Pictures/Lombok.jpg
+exec --no-startup-id  xrandr --output HDMI-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP-1 --off --output DP-0 --off
 bindsym $mod+Shift+f exec chromium
 
 ## Manual management of external displays
 ## Set the shortcuts and what they do
-set $mode_display Ext Screen (d) Double, (s) Single
+set $mode_display Ext Screen (d) Double, (s) Single, (f) Flip, (l) Left, (r) Right
 mode "$mode_display" {
     bindsym s exec --no-startup-id  xrandr --output HDMI-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP-1 --off --output DP-0 --off
-    bindsym d exec --no-startup-id  xrandr --output HDMI-0 --primary --mode 3840x2160 --pos 1680x0 --rotate normal --output DP-1 --off --output DP-0 --mode 1680x1050 --pos 0x0 --rotate normal   # back to normal: Enter or Escape
+    bindsym d exec --no-startup-id  xrandr --output HDMI-0 --primary --mode 3840x2160 --pos 1680x0 --rotate normal --output DP-1 --off --output DP-0 --mode 1680x1050 --pos 0x0 --rotate normal
+    bindsym f exec  /home/tom/Scripts/swap-screen.sh
+    bindsym r exec  i3-msg move workspace to output right
+    bindsym l exec  i3-msg move workspace to output left
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -227,6 +231,7 @@ bindsym $mod+x mode "$mode_display"
 bindsym $mod+n move container to output DP-0
 bindsym $mod+m move container to output primary
 bindsym XF86HomePage exec i3-msg layout splith, move right, move down, focus up, move up, move right, focus left, focus left, focus left, move left
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 #, layout splitv, focus left, move right
 #h - next to
 #v - on top of
