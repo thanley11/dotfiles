@@ -1,6 +1,6 @@
 begin
     prog = irexec
-    button = KEY_TITLE
+    button = BB2
     config = /home/tom/Scripts/football.sh Chromium
     #config = echo "You just pressed 'KEY_TITLE'!" > /home/tom/test.log
     repeat = 0
@@ -9,13 +9,34 @@ end
 begin
     prog = irexec
     button = KEY_NUMERIC_STAR
-    config = /home/tom/Scripts/football.sh Firefox
+    config = /home/tom/Scripts/football.sh mpv
     repeat = 0
 end
 
 begin
     prog = irexec
-    button = KEY_SUBTITLE
+    button = KEY_TEXT
     config = /home/tom/Scripts/football.sh Kodi
+    repeat = 0
+end
+
+begin
+    prog = irexec
+    button = RecTV
+    config = /home/tom/Scripts/swap-screen.sh
+    repeat = 0
+end
+
+begin
+    prog = irexec
+    button = KEY_DVD
+    config = /usr/bin/i3-msg move workspace to output left
+    repeat = 0
+end
+
+begin
+    prog = irexec
+    button = BB4
+    config = /usr/bin/i3-msg move workspace to output right
     repeat = 0
 end
