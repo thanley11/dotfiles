@@ -1,6 +1,4 @@
 filetype off
-call pathogen#infect()
-call pathogen#helptags()
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
 set runtimepath^=~/.vim/bundle/ctrlp.vim  " ctrl-p runtime path
 set nofoldenable 
@@ -52,7 +50,7 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:pymode_rope = 1
 "let g:pymode_doc = 1
 "let g:pymode_doc_key = 'K'
-im :<CR> :<CR>
+"im :<CR> :<CR>
 set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -79,7 +77,7 @@ autocmd FileType typescript nmap <buffer> <leader>i : <C-u>echo ale#hover#Show(b
          "\ getcurpos()[2], {})
 
 "set rtp+=$HOME/.vim/bundle/node_modules/typescript-tools.vim/
-nnoremap <leader>ne :ll<CR>
+"nnoremap <leader>ne :ll<CR>
 let g:pymode_lint_ignore="E501,W601"
 "let g:fsharpbinding_debug = 1
 "sets the tag highlighting to be white no background
@@ -148,4 +146,4 @@ silent! helptags ALL
   "endif
 "endfunction
 "inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-nmap =j :%!python -m json.tool<CR>
+"nmap =j :%!python -m json.tool<CR>

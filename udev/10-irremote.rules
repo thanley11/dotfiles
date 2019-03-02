@@ -1,0 +1,2 @@
+SUBSYSTEM=="input",ATTRS{idVendor}=="05a4",ATTRS{idProduct}=="9881",ATTR{dev}=="13:80",SYMLINK="input/irremote0"
+SUBSYSTEM=="input",ATTRS{idVendor}=="05a4",ATTRS{idProduct}=="9881",ATTR{dev}=="13:81",SYMLINK="input/irremote1"

@@ -8,7 +8,7 @@ dir=~/.dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="vimrc bashrc Xresources xinitrc"              # list of files/folders to symlink in homedir
 #bashrc vim zshrc oh-my-zsh              # other options  
-bundle=~/.vim/bundle
+bundle=~/.vim/pack/git-plugins/start
 ##########
 
 # create dotfiles_old in homedir
@@ -57,9 +57,6 @@ git clone git://github.com/klen/python-mode.git
 echo "Installing vinegar"
 git clone https://github.com/dhruvasagar/vim-vinegar.git
 
-echo "Installing syntastic"
-git clone https://github.com/scrooloose/syntastic.git
-
 echo "Installing nerdcommenter"
 git clone https://github.com/scrooloose/nerdcommenter.git
 
@@ -83,3 +80,9 @@ git clone https://github.com/mileszs/ack.vim.git
 
 echo "Installing vim-fsharp"
 git clone https://github.com/fsharp/vim-fsharp.git
+
+echo "Installing yet another typescript"
+git clone https://github.com/HerringtonDarkholme/yats.vim
+
+echo "Installing ale"
+git clone https://github.com/w0rp/ale
