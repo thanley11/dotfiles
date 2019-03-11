@@ -1,0 +1,26 @@
+{
+  "tsserver.implicitProjectConfig.checkJs": false,
+  "tsserver.reportStyleChecksAsWarnings": false,
+  "tsserver.orgnizeImportOnSave": false,
+  "tsserver.enableJavascript": true,
+  "typescript.suggest.enabled": true,
+  "typescript.suggest.paths": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enable": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "javascript.suggest.paths": true,
+  "tsserver.log": "verbose",
+  "tsserver.trace.server": "verbose",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "tsx",
+    "ts",
+    "js",
+    "less",
+    "md",
+    "jsx",
+    "json"
+  ],
+  "json.format.enable": true
+}
+

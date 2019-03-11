@@ -56,17 +56,62 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 "au BufRead,BufNewFile *.ts        setlocal filetype=typescript
 "Ale
-let g:ale_linters = {
-\   'typescript': ['tsserver'],
-\   'html': ['htmlhint'],
-\   'python': ['pylint', 'pep8']
-\}
-let b:ale_fixers = {'typescript': ['prettier']}
-let g:airline#extensions#ale#enabled = 1
-let g:ale_completion_enabled = 1
-let g:ale_html_htmlhint_options = '--config /home/tom/.htmlhintrc --format=unix'
-let g:ale_html_htmlhint_use_global = 1
-let g:ale_html_htmlhint_executable = '/home/tom/.npm-packages/bin/htmlhint'
+"" ************************ALE Setup******************************
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+
+let g:ale_fixers = { 'css': ['prettier'], 'javascript': ['prettier'], 'typescript' : ['prettier'], 'vue': ['prettier'] }
+let g:ale_linter_aliases = {'js': ['jsx',  'typescript', 'tsx', 'vue', 'javascript']}
+let g:ale_linters = { 
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'], 'js': ['eslint'], 
+      \ 'typescript' : ['tsserver'], 'haskell': ['stack-ghc-mod', 'hlint']}
+
+let g:ale_fix_on_save = 1
+"" ************************************************************
+" ************Coc******************
+" use <tab> for trigger completion and navigate next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <C-i> <Plug>(coc-implementation)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` for fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=0 Tsc :call CocAction('runCommand', 'tsserver.watchBuild')
+
+inoremap <silent><expr> <c-space> coc#refresh()
+imap <silent> <C-x><C-o> <Plug>(coc-complete-custom)
+"let g:ale_linters = {
+"\   'typescript': ['tsserver'],
+"\   'html': ['htmlhint'],
+"\   'python': ['pylint', 'pep8']
+"\}
+"let b:ale_fixers = {'typescript': ['prettier']}
+"let g:airline#extensions#ale#enabled = 1
+"let g:ale_completion_enabled = 1
+"let g:ale_html_htmlhint_options = '--config /home/tom/.htmlhintrc --format=unix'
+"let g:ale_html_htmlhint_use_global = 1
+"let g:ale_html_htmlhint_executable = '/home/tom/.npm-packages/bin/htmlhint'
 
 nnoremap <leader>r :ALEFindReferences<CR>
 nnoremap <leader>d :ALEGoToDefinition<CR>
