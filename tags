@@ -1,0 +1,207 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/1208e454/
+<C-Down>	vimrc	/^nnoremap <C-Down> <C-w>-$/;"	m
+<C-Left>	vimrc	/^nnoremap <C-Left> <C-w><$/;"	m
+<C-Right>	vimrc	/^nnoremap <C-Right> <C-w>>$/;"	m
+<C-Up>	vimrc	/^nnoremap <C-Up> <C-w>+$/;"	m
+<C-i>	vimrc	/^nmap <silent> <C-i> <Plug>(coc-implementation)$/;"	m
+<C-x><C-o>	vimrc	/^imap <silent> <C-x><C-o> <Plug>(coc-complete-custom)$/;"	m
+<F2>	vimrc	/^map <F2> :NERDTreeToggle<CR>$/;"	m
+<F3>	vimrc	/^map <F3> :mksession! \/home\/tom\/.vimsessions\/.vimsession <cr> " Quick write session with F2$/;"	m
+<F4>	vimrc	/^map <F4> :source \/home\/tom\/.vimsessions\/.vimsession <cr>     " And load session with F3$/;"	m
+<F5>	vimrc	/^nnoremap <F5> :let _s=@\/<Bar>:%s\/\\s\\+$\/\/e<Bar>:let @\/=_s<Bar><CR>$/;"	m
+<SPACE>	vimrc	/^nnoremap <SPACE> <Nop>$/;"	m
+<Space>	vimrc	/^map <Space> <leader>$/;"	m
+<TAB>	vimrc	/^inoremap <silent><expr> <TAB>$/;"	m
+<c-space>	vimrc	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<leader>a	vimrc	/^noremap <leader>a ggVG$/;"	m
+<leader>d	vimrc	/^nnoremap <leader>d :ALEGoToDefinition<CR>$/;"	m
+<leader>qf	vimrc	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
+<leader>r	vimrc	/^nnoremap <leader>r :ALEFindReferences<CR>$/;"	m
+<leader>rn	vimrc	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
+<leader>t	vimrc	/^nnoremap <leader>t :ALEGoToDefinitionInTab<CR>$/;"	m
+After	systemd/lircd.service	/^After=network.target lircd-setup.service$/;"	k	section:Unit
+Architecture	pacman.conf	/^Architecture = auto$/;"	k	section:options
+BASE_MOUNTPOINT	ldm.conf	/^BASE_MOUNTPOINT=\/mnt\/$/;"	k
+Description	systemd/lircd.service	/^Description=Flexible IR remote input\/output application support$/;"	k	section:Unit
+Description	systemd/webgrabtv.service	/^Description=Downloads TV Guide data using WebGrabPlus$/;"	k	section:Unit
+Description	systemd/webgrabtv.timer	/^Description=Run webgrabplus to retrieve TV Guide data daily $/;"	k	section:Unit
+Documentation	systemd/lircd.service	/^Documentation=http:\/\/lirc.org\/html\/configure.html$/;"	k	section:Unit
+Documentation	systemd/lircd.service	/^Documentation=man:lircd(8)$/;"	k	section:Unit
+ExecStart	systemd/lircd.service	/^ExecStart=\/usr\/sbin\/lircd --nodaemon --driver=default $/;"	k	section:Service
+ExecStart	systemd/webgrabtv.service	/^ExecStart=\/opt\/wg++\/update.sh$/;"	k	section:Service
+Fold	vimrc	/^command! -nargs=? Fold :call     CocAction('fold', <f-args>)$/;"	c
+Format	vimrc	/^command! -nargs=0 Format :call CocAction('format')$/;"	c
+Group	systemd/webgrabtv.service	/^Group=mythtv$/;"	k	section:Service
+HoldPkg	pacman.conf	/^HoldPkg     = pacman glibc$/;"	k	section:options
+IgnorePkg	pacman.conf	/^IgnorePkg   = postgresql*$/;"	k	section:options
+Include	pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:community
+Include	pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:core
+Include	pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:extra
+Include	pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:multilib
+Install	systemd/lircd.service	/^[Install]$/;"	s
+Install	systemd/webgrabtv.service	/^[Install]$/;"	s
+Install	systemd/webgrabtv.timer	/^[Install]$/;"	s
+LocalFileSigLevel	pacman.conf	/^LocalFileSigLevel = Optional$/;"	k	section:options
+MOUNT_OWNER	ldm.conf	/^MOUNT_OWNER=tom$/;"	k
+NERDTreeIgnore	vimrc	/^let NERDTreeIgnore = ['\\.pyc$']$/;"	v
+NERDTreeShowBookmarks	vimrc	/^let NERDTreeShowBookmarks=1$/;"	v
+NERDTreeShowHidden	vimrc	/^let NERDTreeShowHidden=1$/;"	v
+OnCalendar	systemd/webgrabtv.timer	/^OnCalendar=2:00\/14:00$/;"	k	section:Timer
+Persistent	systemd/webgrabtv.timer	/^Persistent=true     $/;"	k	section:Timer
+SABNZBD_DIR	.sabnzbd.ini/sabnzbd.ini	/^SABNZBD_DIR=\/opt\/sabnzbd$/;"	k
+Service	systemd/lircd.service	/^[Service]$/;"	s
+Service	systemd/webgrabtv.service	/^[Service]$/;"	s
+SigLevel	pacman.conf	/^SigLevel    = Required DatabaseOptional$/;"	k	section:options
+Sx Ex can be used for episode system	webgrab/tv.com.ini	/^*episode Sx Ex can be used for episode system=onscreen or xmltv_ns$/;"	k
+Timer	systemd/webgrabtv.timer	/^[Timer]$/;"	s
+ToggleNumber	vimrc	/^function! ToggleNumber()$/;"	f
+Tsc	vimrc	/^command! -nargs=0 Tsc :call CocAction('runCommand', 'tsserver.watchBuild')$/;"	c
+Type	systemd/lircd.service	/^Type=simple$/;"	k	section:Service
+Type	systemd/webgrabtv.service	/^Type=oneshot$/;"	k	section:Service
+Unit	systemd/lircd.service	/^[Unit]$/;"	s
+Unit	systemd/webgrabtv.service	/^[Unit]$/;"	s
+Unit	systemd/webgrabtv.timer	/^[Unit]$/;"	s
+User	systemd/webgrabtv.service	/^User=mythtv$/;"	k	section:Service
+WantedBy	systemd/lircd.service	/^WantedBy=multi-user.target$/;"	k	section:Install
+WantedBy	systemd/webgrabtv.service	/^WantedBy=timers.target$/;"	k	section:Install
+WantedBy	systemd/webgrabtv.timer	/^WantedBy=timers.target$/;"	k	section:Install
+Wants	systemd/lircd.service	/^Wants=lircd-setup.service$/;"	k	section:Unit
+[c	vimrc	/^nmap <silent> [c <Plug>(coc-diagnostic-prev)$/;"	m
+\x20added retry	webgrab/tv.com.ini	/^*   - added retry=$/;"	k
+]c	vimrc	/^nmap <silent> ]c <Plug>(coc-diagnostic-next)$/;"	m
+adjust_muteness	Scripts/mute-application.sh	/^adjust_muteness() {$/;"	f
+ao	mpv/mpv.conf	/^ao=pulse,alsa$/;"	k
+autofit	mpv/mpv.conf	/^autofit=60%$/;"	k
+backend	compton/compton.conf	/^backend = "glx";$/;"	k
+both	Scripts/monitor-hotplug.sh	/^function both {$/;"	f
+channels	mpv/mpv.conf	/^audio-channels=6$/;"	k
+class	webgrab/tv.com.ini	/^*subdetail_episode.scrub {single|<span class="ep_number">||<\/span>|<\/span>}$/;"	k
+class	webgrab/tv.com.ini	/^description.scrub {regex||<div class=\\\\"description\\\\">(.*?)<\/div>||}$/;"	k
+class	webgrab/tv.com.ini	/^index_description.scrub {single|<div class="desc">||<\/div>|<\/div>}$/;"	k
+class	webgrab/tv.com.ini	/^index_showsplit.scrub {regex||<li class=\\\\"event row\\\\".+?<\/li>||}$/;"	k
+class	webgrab/tv.com.ini	/^index_title.scrub {regex||<div class="title">(.+?)<\/div>||}$/;"	k
+class	webgrab/tv.com.ini	/^subdetail_starrating.scrub {single|<div class="score"|>|<\/div>|<\/div>}$/;"	k
+class	webgrab/tv.com.ini	/^subdetail_temp_3.scrub {single|class="ep_season" itemprop="partOfSeason">||<\/a>|<\/a>}$/;"	k
+class	webgrab/tv.com.ini	/^subdetail_temp_4.scrub {single|<span class="ep_number">||<\/span>|<\/span>}$/;"	k
+color	mpv/mpv.conf	/^osd-border-color='#99000000'            # ARGB format$/;"	k
+color	mpv/mpv.conf	/^osd-color='#CCFFFFFF'                   # ARGB format$/;"	k
+community	pacman.conf	/^[community]$/;"	s
+core	pacman.conf	/^[core]$/;"	s
+cscale	mpv/mpv.conf	/^cscale=ewa_lanczossharp$/;"	k
+customheader	webgrab/tv.com.ini	/^index_urlshow.headers {customheader=Accept-Encoding=gzip,deflate}$/;"	k
+customheader	webgrab/tv.com.ini	/^index_urlshow.headers {customheader=X-Requested-With=XMLHttpRequest}$/;"	k
+customheader	webgrab/tv.com.ini	/^url_index.headers {customheader=Accept-Encoding=gzip,deflate}$/;"	k
+customheader	webgrab/tv.com.ini	/^url_index.headers {customheader=X-Requested-With=XMLHttpRequest}$/;"	k
+customheader	webgrab/tv.com.ini	/^urlsubdetail.headers {customheader=Accept-Encoding=gzip,deflate}$/;"	k
+customheader	webgrab/tv.com.ini	/^urlsubdetail.headers {customheader=X-Requested-With=XMLHttpRequest}$/;"	k
+delta	compton/compton.conf	/^fade-delta = 4; # The time between steps in a fade in milliseconds. (default 10).$/;"	k
+docked	Scripts/monitor-hotplug.sh	/^function docked {$/;"	f
+download_dir	.sabnzbd.ini/sabnzbd.ini	/^download_dir=\/home\/tom\/Downloads\/sabnzbd$/;"	k
+duration	mpv/mpv.conf	/^osd-duration=2500                       # hide the osd after x ms$/;"	k
+exclude	compton/compton.conf	/^shadow-exclude = [$/;"	k
+externalConnected	Scripts/monitor-hotplug.sh	/^function externalConnected {$/;"	f
+extra	pacman.conf	/^[extra]$/;"	s
+fading	compton/compton.conf	/^fading = true; # Fade windows during opacity changes.$/;"	k
+font	mpv/mpv.conf	/^osd-font='Hiragino Maru Gothic Pro'$/;"	k
+format	webgrab/tv.com.ini	/^*subdetail_temp_5.modify {calculate('subdetail_episode' not "" format=F0 type=char)|'subdetail_e/;"	k
+format	webgrab/tv.com.ini	/^*subdetail_temp_5.modify {calculate('subdetail_temp_3' not "" format=F0 type=char)|'subdetail_te/;"	k
+format	webgrab/tv.com.ini	/^index_variable_element.modify {calculate(format=date,unix)|'urldate'}$/;"	k
+g:ackprg	vimrc	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
+g:ale_fix_on_save	vimrc	/^let g:ale_fix_on_save = 1$/;"	v
+g:ale_fixers	vimrc	/^let g:ale_fixers = { 'css': ['prettier'], 'javascript': ['prettier'], 'typescript' : ['prettier'/;"	v
+g:ale_linter_aliases	vimrc	/^let g:ale_linter_aliases = {'js': ['jsx',  'typescript', 'tsx', 'vue', 'javascript']}$/;"	v
+g:ale_linters	vimrc	/^let g:ale_linters = { $/;"	v
+g:ale_open_list	vimrc	/^let g:ale_open_list = 1$/;"	v
+g:ale_set_loclist	vimrc	/^let g:ale_set_loclist = 0$/;"	v
+g:ale_set_quickfix	vimrc	/^let g:ale_set_quickfix = 1$/;"	v
+g:paredit_mode	vimrc	/^let g:paredit_mode = 1$/;"	v
+g:pymode_lint_ignore	vimrc	/^let g:pymode_lint_ignore="E501,W601"$/;"	v
+gd	vimrc	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
+get_index	Scripts/mute-application.sh	/^get_index() {$/;"	f
+gr	vimrc	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
+gy	vimrc	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
+h	mpv/mpv.conf	/^osd-bar-h=2                             # height of osd bar as a fractional percentage of your s/;"	k
+href	webgrab/tv.com.ini	/^*index_site_channel.scrub {regex||<a href="\/listings\/station\/\\d+?".+?title="(.+?)"||}$/;"	k
+href	webgrab/tv.com.ini	/^*index_site_id.scrub {regex||<a href="\/listings\/station\/(\\d+?)"||}$/;"	k
+href	webgrab/tv.com.ini	/^subtitle.scrub {regex||<h2>(?:<a href=.+?>)?(.+?)(?:<\/a>)?<\/h2>||}$/;"	k
+href	webgrab/tv.com.ini	/^temp_1.scrub {single|<h1>|<a href=\\"|\\">|<\/h1>}$/;"	k
+href	webgrab/tv.com.ini	/^temp_2.scrub {single|<h2>|<a href=\\"|\\">|<\/h2>}$/;"	k
+href	webgrab/tv.com.ini	/^title.scrub {regex||<h1>(?:<a href=.+?>)?(.+?)(?:<\/a>)?<\/h1>||}$/;"	k
+http	webgrab/tv.com.ini	/^url_index{url|http:\/\/www.tv.com\/listings\/singlestation\/?start=##TIMESTAMP##&last_event=nada/;"	k
+includeblock	webgrab/tv.com.ini	/^subdetail_actor.scrub {multi(includeblock="<h3>Stars <span")|<li class="bucket">|<div class="nam/;"	k
+includeblock	webgrab/tv.com.ini	/^subdetail_director.scrub {multi(includeblock="<h3>Directors <span")|<li class="bucket">|<div cla/;"	k
+includeblock	webgrab/tv.com.ini	/^subdetail_producer.scrub {multi(includeblock="<div class="role">Producer<\/div>")|<li class="per/;"	k
+includeblock	webgrab/tv.com.ini	/^subdetail_writer.scrub {multi(includeblock="<h3>Writers <span")|<li class="bucket">|<div class="/;"	k
+itemprop	webgrab/tv.com.ini	/^*subdetail_temp_3.scrub {single|class="ep_season" itemprop="partOfSeason">||<\/a>|<\/a>}$/;"	k
+itemprop	webgrab/tv.com.ini	/^subdetail_description.scrub {single|itemprop="description">|<p>|<\/p>|<\/div>}$/;"	k
+jk	vimrc	/^imap jk <Esc>$/;"	m
+layout	mpv/script-opts/osc.conf	/^layout=slimbox$/;"	k
+level	mpv/mpv.conf	/^osd-level=1                             # enable osd and display --osd-status-msg on interaction$/;"	k
+lidOpen	Scripts/monitor-hotplug.sh	/^function lidOpen {$/;"	f
+link	webgrab/tv.com.ini	/^*index_site_channel.modify {cleanup(removeduplicates=equal,100 link="index_site_id")}$/;"	k
+loadcookie	webgrab/tv.com.ini	/^site {loadcookie=tv.com.cookies.txt|retry=<retry channel-delay="5" index-delay="1" time-out="20"/;"	k
+main	Scripts/mute-application.sh	/^main() {$/;"	f
+mapleader	vimrc	/^let mapleader = "\\<Space>"$/;"	v
+mobile	Scripts/monitor-hotplug.sh	/^function mobile {$/;"	f
+msg	mpv/mpv.conf	/^osd-status-msg='${time-pos} \/ ${duration}${?percent-pos:　(${percent-pos}%)}${?vo-drop-frame-c/;"	k
+multilib	pacman.conf	/^[multilib]$/;"	s
+mute	Scripts/mute-application.sh	/^mute()   { adjust_muteness "$1" 1; }$/;"	f
+opacity	compton/compton.conf	/^detect-client-opacity = true; # This prevents opacity being ignored for some apps. For example w/;"	k
+options	pacman.conf	/^[options]$/;"	s
+options snd slots	alsa/alsa-base.conf	/^options snd slots=snd_virtuoso,snd_hda_intel,snd_hda_codec_realtek$/;"	k
+overlay	compton/compton.conf	/^paint-on-overlay = true;$/;"	k
+pattern	webgrab/tv.com.ini	/^index_start.scrub {single(pattern="h:mmtt")|<div class="date_time">|<strong>|<\/strong>|<\/div>}$/;"	k
+pattern	webgrab/tv.com.ini	/^subdetail_episode.modify {addstart('subdetail_temp_4' not "" pattern="Season 'S1' Episode 'E1'")/;"	k
+pixmap	compton/compton.conf	/^glx-no-rebind-pixmap = true;$/;"	k
+profile	mpv/mpv.conf	/^profile=gpu-hq$/;"	k
+property	webgrab/tv.com.ini	/^subdetail_title.scrub {single|<meta property="og:title" content="||" \/>|" \/>}$/;"	k
+radius	compton/compton.conf	/^shadow-radius = 7;		# The blur radius for shadows. (default 12)$/;"	k
+ratingsystem	webgrab/tv.com.ini	/^site {ratingsystem=US|episodesystem=onscreen}$/;"	k
+removeduplicates	webgrab/tv.com.ini	/^index_showsplit.modify {cleanup(removeduplicates=equal,100)}$/;"	k
+s:check_back_space	vimrc	/^function! s:check_back_space() abort$/;"	f
+scale	mpv/mpv.conf	/^scale=ewa_lanczossharp$/;"	k
+seekbarstyle	mpv/script-opts/osc.conf	/^seekbarstyle=bar$/;"	k
+separator	webgrab/tv.com.ini	/^subdetail_category.scrub {single(separator=",""&")|<h3>Categories<\/h3>|<p>|<\/p>|<\/div>}$/;"	k
+shadow	compton/compton.conf	/^clear-shadow = true;		# Zero the part of the shadow's mask behind the window (experimental).$/;"	k
+shadow	compton/compton.conf	/^no-dnd-shadow = true;		# Don't draw shadows on DND windows.$/;"	k
+shadow	compton/compton.conf	/^no-dock-shadow = true;		# Avoid drawing shadows on dock\/panel windows.$/;"	k
+shadow	compton/compton.conf	/^shadow = true;			# Enabled client-side shadows on windows.$/;"	k
+size	mpv/mpv.conf	/^osd-border-size=1                       # size for osd text and progress bar$/;"	k
+size	mpv/mpv.conf	/^osd-font-size=32$/;"	k
+stencil	compton/compton.conf	/^glx-no-stencil = true;$/;"	k
+step	compton/compton.conf	/^fade-in-step = 0.03; # Opacity change between steps while fading in. (default 0.028).$/;"	k
+step	compton/compton.conf	/^fade-out-step = 0.03; # Opacity change between steps while fading out. (default 0.03).$/;"	k
+style	webgrab/tv.com.ini	/^description.modify {cleanup(style=jsondecode)}$/;"	k
+style	webgrab/tv.com.ini	/^index_showsplit.modify {cleanup(style=jsondecode)}$/;"	k
+tags	webgrab/tv.com.ini	/^subdetail_actor.modify {cleanup(tags="<"">")}$/;"	k
+tags	webgrab/tv.com.ini	/^subdetail_category.modify {cleanup(tags="<"">")}$/;"	k
+tags	webgrab/tv.com.ini	/^subdetail_director.modify {cleanup(tags="<"">")}$/;"	k
+tags	webgrab/tv.com.ini	/^subdetail_producer.modify {cleanup(tags="<"">")}$/;"	k
+tags	webgrab/tv.com.ini	/^subdetail_temp_4.modify {cleanup(tags="<"">")}$/;"	k
+tags	webgrab/tv.com.ini	/^subdetail_writer.modify {cleanup(tags="<"">")}$/;"	k
+tscale	mpv/mpv.conf	/^tscale=oversample$/;"	k
+type	webgrab/tv.com.ini	/^index_title.modify {remove(type=regex)|"(<[^>]*>)"}$/;"	k
+type	webgrab/tv.com.ini	/^index_title.modify {remove(type=regex)|"(<label>.+?<\/label>)"}$/;"	k
+type	webgrab/tv.com.ini	/^subtitle.modify {remove(type=regex)|"(<[^>]*>)"}$/;"	k
+type	webgrab/tv.com.ini	/^title.modify {remove(type=regex)|"(<[^>]*>)"}$/;"	k
+type	webgrab/tv.com.ini	/^title.modify {remove(type=regex)|"(<label>.+?<\/label>)"}$/;"	k
+unmute	Scripts/mute-application.sh	/^unmute() { adjust_muteness "$1" 0; }$/;"	f
+url	webgrab/tv.com.ini	/^site {url=tv.com|timezone=America\/New_York|maxdays=10|cultureinfo=en-US|charset=UTF-8|titlematc/;"	k
+usage	Scripts/mute-application.sh	/^usage() {$/;"	f
+use episodesystem	webgrab/tv.com.ini	/^*episode S0xE0x for kodi,ect which require leading zero when single digit.use episodesystem=onsc/;"	k
+valign	mpv/script-opts/osc.conf	/^valign=0.95$/;"	k
+version	fonts/local.conf	/^<?xml version='1.0'?>$/;"	k
+vsync	compton/compton.conf	/^vsync = "opengl-swc"; $/;"	k
+w	mpv/mpv.conf	/^osd-bar-w=60                            # width of " " "$/;"	k
+w	mpv/mpv.conf	/^osd-bar-w=96$/;"	k
+wintypes	compton/compton.conf	/^wintypes:$/;"	k
+x	compton/compton.conf	/^shadow-offset-x = -7;		# The left offset for shadows. (default -15)$/;"	k
+x	mpv/mpv.conf	/^osd-bar-align-x=0$/;"	k
+y	compton/compton.conf	/^shadow-offset-y = -7;		# The top offset for shadows. (default -15)$/;"	k
+y	mpv/mpv.conf	/^osd-bar-align-y=1$/;"	k

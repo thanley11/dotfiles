@@ -7,7 +7,7 @@ export COREHOST_TRACE=1
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
 export SSLKEYLOGFILE=$HOME/sslkeylog.log
-source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
+source $HOME/.vim/pack/git-plugins/start/gruvbox/gruvbox_256palette.sh
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 PIPENV="${HOME}/.local/bin"
@@ -36,8 +36,13 @@ alias h="history|grep "
 alias f="find . |grep "
 # Search running processes
 alias p="ps aux |grep "
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gp='git push'
+alias gacm='git add -A && git commit -m'
+alias glog='git log'
 
-#Extract any file
 extract () {
     if [ -f $1 ] ; then
         case $1 in
@@ -210,3 +215,6 @@ fi
 
 
 
+source /usr/share/nvm/init-nvm.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
