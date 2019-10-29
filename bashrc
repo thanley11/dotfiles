@@ -218,3 +218,7 @@ fi
 source /usr/share/nvm/init-nvm.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#export http_proxy='127.0.0.1:8888'
+#export https_proxy='127.0.0.1:8888'
+#export ftp_proxy=''
+#export socks_proxy=''
