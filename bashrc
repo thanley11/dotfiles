@@ -222,3 +222,7 @@ source /usr/share/nvm/init-nvm.sh
 #export https_proxy='127.0.0.1:8888'
 #export ftp_proxy=''
 #export socks_proxy=''
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
