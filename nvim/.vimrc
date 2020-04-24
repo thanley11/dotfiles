@@ -64,8 +64,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -100,7 +98,8 @@ Plug 'posva/vim-vue'
 
 " Completion
 Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'w0rp/ale'
 
 " File Tree
@@ -118,11 +117,14 @@ let g:jsx_ext_required = 0
 " ******************************************************
 
 " ************************ALE Setup******************************
-let g:ale_fixers = { 'css': ['prettier'], 'javascript': ['prettier'], 'typescript' : ['prettier'], 'vue': ['prettier'] }
+let g:ale_fixers = { 'css': ['prettier'], 'javascript': ['prettier'], 'typescript' : ['prettier'], 'vue': ['prettier']}
 let g:ale_linter_aliases = {'js': ['jsx',  'typescript', 'tsx', 'vue', 'javascript']}
 let g:ale_linters = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'], 'js': ['eslint'],
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'], 
+      \ 'js': ['eslint'],
       \ 'typescript' : ['tsserver']}
+      "\ 'vue': ['eslint', 'vls']
+      "\ 'python': ['flake8']}
 
 let g:ale_fix_on_save = 1
 nnoremap <leader>r :ALEFindReferences<CR>
@@ -204,6 +206,7 @@ nmap <Leader>gaa :Git add .<CR>
 let g:fzf_mru_relative = 1
 
 " ************Coc******************
+" Autocomplete Engine
 " use <tab> for trigger completion and navigate next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -235,6 +238,8 @@ command! -nargs=0 Tsc :call CocAction('runCommand', 'tsserver.watchBuild')
 
 inoremap <silent><expr> <c-space> coc#refresh()
 imap <silent> <C-x><C-o> <Plug>(coc-complete-custom)
+
+"let g:coc_node_path='~/.nvm/versions/node/v12.16.0/bin'
 
 " ***************************************
 " Use ctrl-[hjkl] to select the active split!
