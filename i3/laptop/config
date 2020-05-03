@@ -98,10 +98,10 @@ bindsym $mod+minus scratchpad show
 
 # focus the child container
 #bindsym $mod+d focus child
-set $workspace1 "1: Terminal"
-set $workspace2 "2: Firefox"
-set $workspace3 "3: Files"
-set $workspace4 "4: Chrome"
+set $workspace1 " Terminal"
+set $workspace2 " Firefox"
+set $workspace3 " Files"
+set $workspace4 " Chrome"
 set $workspace5 "5: Kodi"
 set $workspace6 "6: Video"
 set $workspace7 "7: Code"
@@ -179,7 +179,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        font pango:DejaVu Sans Mono, Awesome 8
+        font pango:DejaVu Sans Mono, Awesome 10
+        strip_workspace_numbers yes
 }
 
 bindsym $mod+shift+x exec i3lock -c 000000
