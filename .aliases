@@ -1,0 +1,30 @@
+alias diskspace="du -S | sort -n -r |less"
+
+# Directory navigation aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Search Aliases
+
+# Search cmd line history
+alias h="history|grep "
+# Find in current dir and subdirs
+alias f="find . |grep "
+# Search running processes
+
+# Git Aliases 
+
+alias p="ps aux |grep "
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gp='git push'
+alias gacm='git add -A && git commit -m'
+alias glog='git log'
+
+# Bookmarks
+alias dev='cd ~/dev_projects && ls -lA'
+alias doc='cd ~/Documents && ls -lA'
+alias dl='cd ~/Downloads && ls -lA'

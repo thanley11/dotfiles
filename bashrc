@@ -17,31 +17,31 @@ PATH="$PIPENV:$NPM_PACKAGES/bin:$PATH"
 unset MANPATH 
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Show diskspace for directories
-alias diskspace="du -S | sort -n -r |less"
+## Show diskspace for directories
+#alias diskspace="du -S | sort -n -r |less"
 
-#Mplayer fullscreen command
-alias mp="mplayer -fs"
-# Directory navigation aliases
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
+##Mplayer fullscreen command
+#alias mp="mplayer -fs"
+## Directory navigation aliases
+#alias ..='cd ..'
+#alias ...='cd ../..'
+#alias ....='cd ../../..'
+#alias .....='cd ../../../..'
 
-# Search Aliases
+## Search Aliases
 
-# Search cmd line history
-alias h="history|grep "
-# Find in current dir and subdirs
-alias f="find . |grep "
-# Search running processes
-alias p="ps aux |grep "
-alias gs='git status'
-alias gl='git log'
-alias gd='git diff'
-alias gp='git push'
-alias gacm='git add -A && git commit -m'
-alias glog='git log'
+## Search cmd line history
+#alias h="history|grep "
+## Find in current dir and subdirs
+#alias f="find . |grep "
+## Search running processes
+#alias p="ps aux |grep "
+#alias gs='git status'
+#alias gl='git log'
+#alias gd='git diff'
+#alias gp='git push'
+#alias gacm='git add -A && git commit -m'
+#alias glog='git log'
 
 extract () {
     if [ -f $1 ] ; then

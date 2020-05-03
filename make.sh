@@ -8,8 +8,6 @@ dir=~/.dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="vimrc bashrc Xresources xinitrc"              # list of files/folders to symlink in homedir
 #bashrc vim zshrc oh-my-zsh              # other options  
-bundle=~/.vim/pack/git-plugins/start
-##########
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -39,50 +37,5 @@ ln -s $dir/mpv/lua-settings ~/.config/mpv/lua-settings
 ln -s $dir/mpv/mpv.conf ~/.config/mpv/mpv.conf
 
 # Install Pathogen - May change in the future
-echo "Installing pathogen"
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# Install pymode and NerdTree by cloning their repos into ~/.vim/bundle
-echo "Changing to $bundle directory"
-cd $bundle
 echo "...done"
-
-echo "Installing NerdTree"
-git clone https://github.com/scrooloose/nerdtree.git
-
-echo "Installing pymode"
-git clone git://github.com/klen/python-mode.git
-
-echo "Installing vinegar"
-git clone https://github.com/dhruvasagar/vim-vinegar.git
-
-echo "Installing nerdcommenter"
-git clone https://github.com/scrooloose/nerdcommenter.git
-
-echo "Installing emmet"
-git clone https://github.com/mattn/emmet-vim.git
-
-echo "Installing ctrl-p"
-git clone https://github.com/ctrlpvim/ctrlp.vim.git
-
-echo "Installing gruvbox"
-git clone https://github.com/morhetz/gruvbox.git
-
-echo "Installing airline"
-git clone https://github.com/bling/vim-airline.git
-
-echo "Installing typescript-vimt"
-git clone https://github.com/leafgarland/typescript-vim.git
-
-echo "Installing ack.vim"
-git clone https://github.com/mileszs/ack.vim.git
-
-echo "Installing vim-fsharp"
-git clone https://github.com/fsharp/vim-fsharp.git
-
-echo "Installing yet another typescript"
-git clone https://github.com/HerringtonDarkholme/yats.vim
-
-echo "Installing ale"
-git clone https://github.com/w0rp/ale

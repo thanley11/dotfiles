@@ -98,9 +98,8 @@ Plug 'posva/vim-vue'
 
 " Completion
 Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'w0rp/ale'
+Plug 'neovim/nvim-lsp'
 
 " File Tree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -205,42 +204,6 @@ nmap <Leader>gaa :Git add .<CR>
 " Use MRU
 let g:fzf_mru_relative = 1
 
-" ************Coc******************
-" Autocomplete Engine
-" use <tab> for trigger completion and navigate next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-" Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <C-i> <Plug>(coc-implementation)
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use `:Format` for format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" Use `:Fold` for fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-command! -nargs=0 Tsc :call CocAction('runCommand', 'tsserver.watchBuild')
-
-inoremap <silent><expr> <c-space> coc#refresh()
-imap <silent> <C-x><C-o> <Plug>(coc-complete-custom)
-
-"let g:coc_node_path='~/.nvm/versions/node/v12.16.0/bin'
-
 " ***************************************
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -248,6 +211,52 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
+"************Auto complete************************
+let settings = {
+          \   "pyls" : {
+          \     "enable" : v:true,
+          \     "trace" : { "server" : "verbose", },
+          \     "commandPath" : "",
+          \     "configurationSources" : [ "pycodestyle" ],
+          \     "plugins" : {
+          \       "jedi_completion" : { "enabled" : v:true, },
+          \       "jedi_hover" : { "enabled" : v:true, },
+          \       "jedi_references" : { "enabled" : v:true, },
+          \       "jedi_signature_help" : { "enabled" : v:true, },
+          \       "jedi_symbols" : {
+          \         "enabled" : v:true,
+          \         "all_scopes" : v:true,
+          \       },
+          \       "mccabe" : {
+          \         "enabled" : v:true,
+          \         "threshold" : 15,
+          \       },
+          \       "preload" : { "enabled" : v:true, },
+          \       "pycodestyle" : { "enabled" : v:true, },
+          \       "pydocstyle" : {
+          \         "enabled" : v:false,
+          \         "match" : "(?!test_).*\\.py",
+          \         "matchDir" : "[^\\.].*",
+          \       },
+          \       "pyflakes" : { "enabled" : v:true, },
+          \       "rope_completion" : { "enabled" : v:true, },
+          \       "yapf" : { "enabled" : v:true, },
+          \     }}}
+
+call nvim_lsp#setup("pyls", settings)
+
+" disable preview window
+set completeopt-=preview
+
+" use omni completion provided by lsp
+set omnifunc=lsp#omnifunc
+
+nnoremap <silent> ;dc :call lsp#text_document_declaration()<CR>
+nnoremap <silent> ;df :call lsp#text_document_definition()<CR>
+nnoremap <silent> ;h  :call lsp#text_document_hover()<CR>
+nnoremap <silent> ;i  :call lsp#text_document_implementation()<CR>
+nnoremap <silent> ;s  :call lsp#text_document_signature_help()<CR>
+nnoremap <silent> ;td :call lsp#text_document_type_definition()<CR>
 "*************** LightLine ***********************
   let g:lightline = {
       \ 'colorscheme': 'solarized',
@@ -256,8 +265,7 @@ nmap <silent> <c-l> :wincmd l<CR>
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'cocstatus': 'coc#status'
+      \   'gitbranch': 'fugitive#head'
       \ },
       \ }
 "*************************************************
