@@ -7,14 +7,13 @@ export COREHOST_TRACE=1
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
 export SSLKEYLOGFILE=$HOME/sslkeylog.log
-source $HOME/.vim/pack/git-plugins/start/gruvbox/gruvbox_256palette.sh
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 PIPENV="${HOME}/.local/bin"
 
 PATH="$PIPENV:$NPM_PACKAGES/bin:$PATH"
 
-unset MANPATH 
+unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 ## Show diskspace for directories

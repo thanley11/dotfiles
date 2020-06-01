@@ -6,6 +6,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
 # Search Aliases
 
 # Search cmd line history
@@ -14,7 +19,7 @@ alias h="history|grep "
 alias f="find . |grep "
 # Search running processes
 
-# Git Aliases 
+# Git Aliases
 
 alias p="ps aux |grep "
 alias gs='git status'
@@ -28,3 +33,17 @@ alias glog='git log'
 alias dev='cd ~/dev_projects && ls -lA'
 alias doc='cd ~/Documents && ls -lA'
 alias dl='cd ~/Downloads && ls -lA'
+
+# Zsh
+d='dirs -v | head -10'
+1='cd -'
+2='cd -2'
+3='cd -3'
+4='cd -4'
+5='cd -5'
+6='cd -6'
+7='cd -7'
+8='cd -8'
+9='cd -9'
+
+alias vim='nvim'

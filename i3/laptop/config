@@ -98,11 +98,11 @@ bindsym $mod+minus scratchpad show
 
 # focus the child container
 #bindsym $mod+d focus child
-set $workspace1 " Terminal"
-set $workspace2 " Firefox"
-set $workspace3 " Files"
-set $workspace4 " Chrome"
-set $workspace5 "5: Kodi"
+set $workspace1 "1:  Terminal"
+set $workspace2 "2: Firefox"
+set $workspace3 "3: Files"
+set $workspace4 "4: Chrome"
+set $workspace5 "5: Kodi"
 set $workspace6 "6: Video"
 set $workspace7 "7: Code"
 set $workspace10 "10: Music"
@@ -201,10 +201,11 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Program Related
+exec xrdb ~/.Xresources
 exec_always --no-startup-id xmodmap ~/.xmodmap
 exec --no-startup-id /usr/bin/xfce4-power-manager
-exec compton -CGb 
-exec --no-startup-id redshift 
+exec compton -CGb
+exec --no-startup-id redshift
 exec --no-startup-id /usr/bin/blueman-applet # Bluetooth Manager
 exec --no-startup-id /usr/bin/caffeine #Screensaver disable
 exec --no-startup-id /usr/bin/lxqt-connman-applet # Wifi applet
@@ -219,9 +220,9 @@ bindsym Shift+Insert exec scrot -u "/home/tom/Pictures/$(date '+%A %B %d - %H:%M
 ## Set the shortcuts and what they do
 set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile
 mode "$mode_display" {
-    bindsym d exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --off --output HDMI2 --off --output HDMI1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP2 --off, mode "Default"
+    bindsym d exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
     bindsym m exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
-    bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1366x768 --pos 288x1200 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP2 --off, mode "Default"
+    bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1366x768 --pos 288x1200 --rotate normal --output DP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"

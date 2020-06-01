@@ -46,15 +46,21 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Python
 export SSLKEYLOGFILE=$HOME/sslkeylog.log
-source $HOME/.vim/pack/git-plugins/start/gruvbox/gruvbox_256palette.sh
 
-NPM_PACKAGES="${HOME}/.npm-packages"
+#NPM_PACKAGES="${HOME}/.npm-packages"
 PIPENV="${HOME}/.local/bin"
 
-PATH="$PIPENV:$NPM_PACKAGES/bin:$PATH"
+PATH="$PIPENV:$PATH"
 
-unset MANPATH 
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+#unset MANPATH
+#export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#export PATH="$PATH:$HOME/.rvm/bin"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

@@ -1,3 +1,6 @@
+set bg=dark
+colorscheme gruvbox
+syntax on
 
 set guifont=Fira\ Code\:h20
 set t_Co=256              " enable 256-color mode.
@@ -6,7 +9,7 @@ set ttimeoutlen=0
 scriptencoding utf-8
 set encoding=utf-8
 set smartindent
-set nofoldenable 
+set nofoldenable
 set showmatch
 set vb t_vb=
 "set guiheadroom=0
@@ -51,6 +54,10 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+
+set updatetime=50
+
+set shortmess+=c
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
@@ -87,11 +94,10 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'typescript', 'typescript.react', 'javascript.react']}
-"Plug 'parsonsmatt/vim2hs', { 'for': ['haskell'] }
 Plug 'leafgarland/typescript-vim',  {'for': ['typescript', 'typescript.react']}
 "Plug 'HerringtonDarkholme/yats.vim'
 Plug 'posva/vim-vue'
@@ -99,7 +105,7 @@ Plug 'posva/vim-vue'
 " Completion
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
-Plug 'neovim/nvim-lsp'
+"Plug 'neovim/nvim-lsp'
 
 " File Tree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -119,7 +125,7 @@ let g:jsx_ext_required = 0
 let g:ale_fixers = { 'css': ['prettier'], 'javascript': ['prettier'], 'typescript' : ['prettier'], 'vue': ['prettier']}
 let g:ale_linter_aliases = {'js': ['jsx',  'typescript', 'tsx', 'vue', 'javascript']}
 let g:ale_linters = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'], 
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'js': ['eslint'],
       \ 'typescript' : ['tsserver']}
       "\ 'vue': ['eslint', 'vls']
@@ -150,6 +156,8 @@ cnoreabbrev Qall qall
 
 noremap YY "+y<CR>
 
+nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+
 if has('macunix')
   " pbcopy for OSX copy/paste
   vmap <C-x> :!pbcopy<CR>
@@ -165,11 +173,22 @@ let g:netrw_liststyle = 3
 let g:netrw_localrmdir='rm -r'
 
 " ************** Key Mappings *******************************************
-let mapleader = "\<Space>"
+let mapleader="\<SPACE>"
 map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+"Select All
+noremap <leader>a ggVG
 
 " Remove that dumb search highlight
 nmap <silent> <leader>, :nohl<cr>
+
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
+nnoremap <C-Left> <C-w><
+nnoremap <C-Right> <C-w>>
+
+map <F3> :mksession! /home/tom/.vimsessions/.vimsession <cr> " Quick write session with F2
+map <F4> :source /home/tom/.vimsessions/.vimsession <cr>     " And load session with F3
+
 
 "escaping
 inoremap jk <Esc>
@@ -212,51 +231,36 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 "************Auto complete************************
-let settings = {
-          \   "pyls" : {
-          \     "enable" : v:true,
-          \     "trace" : { "server" : "verbose", },
-          \     "commandPath" : "",
-          \     "configurationSources" : [ "pycodestyle" ],
-          \     "plugins" : {
-          \       "jedi_completion" : { "enabled" : v:true, },
-          \       "jedi_hover" : { "enabled" : v:true, },
-          \       "jedi_references" : { "enabled" : v:true, },
-          \       "jedi_signature_help" : { "enabled" : v:true, },
-          \       "jedi_symbols" : {
-          \         "enabled" : v:true,
-          \         "all_scopes" : v:true,
-          \       },
-          \       "mccabe" : {
-          \         "enabled" : v:true,
-          \         "threshold" : 15,
-          \       },
-          \       "preload" : { "enabled" : v:true, },
-          \       "pycodestyle" : { "enabled" : v:true, },
-          \       "pydocstyle" : {
-          \         "enabled" : v:false,
-          \         "match" : "(?!test_).*\\.py",
-          \         "matchDir" : "[^\\.].*",
-          \       },
-          \       "pyflakes" : { "enabled" : v:true, },
-          \       "rope_completion" : { "enabled" : v:true, },
-          \       "yapf" : { "enabled" : v:true, },
-          \     }}}
+"
+"let g:coc_node_path = '/home/tom/.nvm/versions/node/v12.16.0/bin/node'
+" Show autocomplete when Tab is pressed
+inoremap <silent><expr> <Tab> coc#refresh()
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
 
-call nvim_lsp#setup("pyls", settings)
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<    CR>
 
-" disable preview window
-set completeopt-=preview
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+"
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
 
-" use omni completion provided by lsp
-set omnifunc=lsp#omnifunc
-
-nnoremap <silent> ;dc :call lsp#text_document_declaration()<CR>
-nnoremap <silent> ;df :call lsp#text_document_definition()<CR>
-nnoremap <silent> ;h  :call lsp#text_document_hover()<CR>
-nnoremap <silent> ;i  :call lsp#text_document_implementation()<CR>
-nnoremap <silent> ;s  :call lsp#text_document_signature_help()<CR>
-nnoremap <silent> ;td :call lsp#text_document_type_definition()<CR>
 "*************** LightLine ***********************
   let g:lightline = {
       \ 'colorscheme': 'solarized',
@@ -351,8 +355,5 @@ let g:fzf_colors =
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_generate_on_empty_buffer = 1
 
-
-set bg=dark
-colorscheme gruvbox
-syntax on
-
+autocmd BufWritePre * :call TrimWhitespace()
+autocmd FileType js,ts,cpp,cxx,h,hpp,c :call GoCoc()
