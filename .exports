@@ -55,8 +55,11 @@ PATH="$PIPENV:$PATH"
 #unset MANPATH
 #export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-#export PATH="$PATH:$HOME/.rvm/bin"
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+#export PATH="$PATH:$HOME/.rvm/gems/ruby-2.6.3/bin"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
