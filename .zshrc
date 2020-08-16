@@ -63,3 +63,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/tom/perl5"; export PERL_MM_OPT;
 
 # vim bindings
 bindkey -v
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

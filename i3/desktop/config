@@ -185,9 +185,9 @@ bar {
 bindsym $mod+shift+x exec i3lock -c 000000
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -202,13 +202,12 @@ bindsym XF86AudioPrev exec playerctl previous
 #Program Related
 exec_always --no-startup-id xmodmap ~/.xmodmap
 #exec --no-startup-id /usr/bin/xfce4-power-manager
-exec compton -CGb 
-#exec --no-startup-id redshift 
-exec --no-startup-id nm-applet
+exec compton -CGb
+#exec --no-startup-id redshift
 exec_always xset s off -dpms
 
-exec --no-startup-id pactl set-sink-mute 0 0
-exec --no-startup-id pactl set-sink-volume 0 100%
+exec --no-startup-id pactl set-sink-mute 1 0
+exec --no-startup-id pactl set-sink-volume 1 100%
 
 exec nautilus
 exec kodi
