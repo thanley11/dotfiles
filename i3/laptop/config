@@ -204,7 +204,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec xrdb ~/.Xresources
 exec_always --no-startup-id xmodmap ~/.xmodmap
 exec --no-startup-id /usr/bin/xfce4-power-manager
-exec compton -CGb
+exec picom -CGb
 exec --no-startup-id redshift
 exec --no-startup-id /usr/bin/blueman-applet # Bluetooth Manager
 exec --no-startup-id /usr/bin/caffeine #Screensaver disable
@@ -218,11 +218,13 @@ bindsym --release Insert exec scrot -s "/home/tom/Pictures/$(date '%B %d %A - %H
 bindsym Shift+Insert exec scrot -u "/home/tom/Pictures/$(date '+%A %B %d - %H:%M').png"
 ## Manual management of external displays
 ## Set the shortcuts and what they do
-set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile
+set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile, (t) Top, (b) Bottom
 mode "$mode_display" {
     bindsym d exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
     bindsym m exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
     bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1366x768 --pos 288x1200 --rotate normal --output DP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
+    bindsym t exec  i3-msg move workspace to output up
+    bindsym b exec  i3-msg move workspace to output down
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"

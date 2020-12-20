@@ -127,9 +127,9 @@ let g:ale_linter_aliases = {'js': ['jsx',  'typescript', 'tsx', 'vue', 'javascri
 let g:ale_linters = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'js': ['eslint'],
-      \ 'typescript' : ['tsserver']}
+      \ 'typescript' : ['tsserver'],
+      \'python': ['flake8']}
       "\ 'vue': ['eslint', 'vls']
-      "\ 'python': ['flake8']}
 
 let g:ale_fix_on_save = 1
 nnoremap <leader>r :ALEFindReferences<CR>
