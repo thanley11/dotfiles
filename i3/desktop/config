@@ -105,6 +105,7 @@ set $workspace4 "4: Terminal"
 set $workspace5 "5: Video"
 set $workspace6 "6: Deluge"
 set $workspace7 "7: Pavucontrol"
+set $workspace8 "8: Firefox"
 set $workspace10 "10: Music"
 
 
@@ -116,7 +117,7 @@ bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $workspace10
 
@@ -128,7 +129,7 @@ bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
@@ -139,6 +140,7 @@ assign [class="Terminator"]   $workspace4
 assign [class="mpv"]        $workspace5
 assign [class="Deluge"]       $workspace6
 assign [class="Pavucontrol"]       $workspace7
+assign [class="firefox"]       $workspace8
 assign [class="Clementine"] $workspace10
 # Install xorg-xprop, then run xprop and click on window
 # Look for WM_CLASS(STRING) = "code", "Code" <- Second value
@@ -239,3 +241,5 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 #v - on top of
 
 #layout splith, focus up, move down
+# mouse not put in center on switch of displays
+mouse_warping none
