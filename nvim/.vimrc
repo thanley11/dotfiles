@@ -101,6 +101,7 @@ Plug 'mxw/vim-jsx', {'for': ['javascript', 'typescript', 'typescript.react', 'ja
 Plug 'leafgarland/typescript-vim',  {'for': ['typescript', 'typescript.react']}
 "Plug 'HerringtonDarkholme/yats.vim'
 Plug 'posva/vim-vue'
+Plug 'rust-lang/rust.vim'
 
 " Completion
 Plug 'jiangmiao/auto-pairs'
@@ -135,6 +136,7 @@ let g:ale_fix_on_save = 1
 nnoremap <leader>r :ALEFindReferences<CR>
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToDefinitionInTab<CR>
+nnoremap <leader>i :ALEImport<CR>
 
 " ************************************************************
 
@@ -357,3 +359,5 @@ let g:gutentags_generate_on_empty_buffer = 1
 
 autocmd BufWritePre * :call TrimWhitespace()
 autocmd FileType js,ts,cpp,cxx,h,hpp,c :call GoCoc()
+" configure indentation for rust
+autocmd FileType rust set expandtab tabstop=4 softtabstop=4 shiftwidth=4
