@@ -1,10 +1,1 @@
-include "~/.config/lirc/football.lirc"
-#begin
-    #prog = irexec
-    #button = KEY_TITLE
-    #remote = devinput
-    ##config = /home/tom/Scripts/football.sh Chromium
-    #config = echo "You just pressed 'KEY_TITLE'!" > /home/tom/test.log
-    #repeat = 0
-#end
-
+include "~/.config/lircrc/football"

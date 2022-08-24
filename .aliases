@@ -47,3 +47,4 @@ d='dirs -v | head -10'
 9='cd -9'
 
 alias vim='nvim'
+alias mpvr='mpv --script=/home/tom/Videos/360plugin.lua --script-opts=360plugin-enabled=yes '

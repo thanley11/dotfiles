@@ -79,8 +79,6 @@ call plug#begin('~/.vim/plugged')
 " Color / Themes
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
-" GIT
-Plug 'tpope/vim-fugitive'
 " Movement
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
