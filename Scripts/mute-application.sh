@@ -43,21 +43,29 @@ adjust_muteness() {
     if [[ -z "$index" ]]; then
         echo "error: no PulseAudio sink named $1 was found" >&2
     else
-        [[ "$index" ]] && pacmd set-sink-input-mute "$index" $2 >/dev/null
+        [[ "$index" ]] && pactl set-sink-input-mute "$index" $2 >/dev/null
     fi
 }
 
 get_index() {
-#    local pid=$(pidof "$1")
-#    if [[ -z "$pid" ]]; then
-#        echo "error: no running processes for: $1" >&2
-#    else
-        pacmd list-sink-inputs |
-        awk -v name=$1 '
-            $1 == "index:" {idx = $2}
-            $1 == "application.name" && $3 == "\"" name "\"" {print idx; exit}
-        '
-#    fi
+  case $1 in
+    'KodiSink')
+      pactl list sink-inputs | perl -ne '/^Sink Input #(\d+)/ && { $sourceid=$1 }; /^\s+node.name = \"KodiSink"/ && print $sourceid;'
+    ;;
+
+    'Chromium')
+      pactl list sink-inputs | perl -ne '/^Sink Input #(\d+)/ && { $sourceid=$1 }; /^\s+node.name = \"Chromium\"/ && print $sourceid;'
+    ;;
+    'Firefox')
+     pactl list sink-inputs | perl -ne '/^Sink Input #(\d+)/ && { $sourceid=$1 }; /^\s+node.name = \"Firefox\"/ && print $sourceid;'
+      ;;
+    'mpv')
+     pactl list sink-inputs | perl -ne '/^Sink Input #(\d+)/ && { $sourceid=$1 }; /^\s+node.name = \"mpv\"/ && print $sourceid;'
+      ;;
+    *)
+      echo -n "unknown"
+      ;;
+  esac
 }
 
 main "$@"
