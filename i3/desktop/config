@@ -28,8 +28,10 @@ font pango:monospace 18
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 hide_edge_borders both
-new_window none
 
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 # start a terminal
 bindsym $mod+Return exec xterm
 
