@@ -208,7 +208,7 @@ exec picom -CGb
 exec --no-startup-id redshift
 exec --no-startup-id /usr/bin/blueman-applet # Bluetooth Manager
 exec --no-startup-id /usr/bin/caffeine #Screensaver disable
-exec --no-startup-id /usr/bin/lxqt-connman-applet # Wifi applet
+exec --no-startup-id /usr/bin/cmst -m # Wifi applet minimized
 
 #exec nautilus
 #exec --no-startup-id nm-applet

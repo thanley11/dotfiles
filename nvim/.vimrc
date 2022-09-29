@@ -92,7 +92,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'typescript', 'typescript.react', 'javascript.react']}
@@ -126,7 +125,7 @@ let g:ale_linter_aliases = {'js': ['jsx',  'typescript', 'tsx', 'vue', 'javascri
 let g:ale_linters = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'js': ['eslint'],
-      \ 'typescript' : ['tsserver'],
+      \ 'typescript' : ['tsserver','eslint'],
       \'python': ['flake8']}
       "\ 'vue': ['eslint', 'vls']
 
@@ -288,7 +287,7 @@ autocmd FileType markdown setlocal spell
 
 "NerdTree
 "map <C-n> :NERDTreeToggle<CR>
-map <F2> :NERDTreeToggle<CR>
+map - :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
