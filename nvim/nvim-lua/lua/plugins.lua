@@ -12,7 +12,6 @@ return require('packer').startup(function()
   use 'gruvbox-community/gruvbox' -- colorscheme
   use 'easymotion/vim-easymotion'
   use 'tpope/vim-repeat'
-  
 
   use { 'lewis6991/gitsigns.nvim', -- git added/removed in sidebar + inline blame
     requires = { 'nvim-lua/plenary.nvim' },
@@ -31,18 +30,16 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  
-  
   use 'nvim-treesitter/nvim-treesitter-angular'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'scrooloose/nerdcommenter' -- commenting shortcuts
 
-  -- require'nvim-treesitter.configs'.setup {
-	-- ensure_installed = "all",
-	-- highlight = {
-		-- enable = true
-	-- }
-  -- }
+   require'nvim-treesitter.configs'.setup {
+     ensure_installed = "all",
+     highlight = {
+       enable = true
+     }
+   }
 
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
