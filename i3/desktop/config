@@ -29,9 +29,11 @@ font pango:monospace 18
 floating_modifier $mod
 hide_edge_borders both
 
-default_border pixel 1
-default_floating_border pixel 1
-for_window [class="^.*"] border pixel 1
+
+default_border none
+default_floating_border none
+for_window [class="^.*"] border none
+
 # start a terminal
 bindsym $mod+Return exec xterm
 

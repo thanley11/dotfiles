@@ -155,7 +155,8 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 noremap YY "+y<CR>
-
+#paste and keep old
+"xnoremap("<leader>p", "\"_dP")
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 if has('macunix')
