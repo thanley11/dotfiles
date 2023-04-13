@@ -3,8 +3,6 @@ return require('packer').startup(function()
 
   -- common
   use 'tpope/vim-fugitive' -- Git commands
-  use 'vim-airline/vim-airline' -- powerline
-  use 'vim-airline/vim-airline-themes'
   use 'rhysd/vim-grammarous' -- grammar check
   use 'andymass/vim-matchup' -- matching parens and more
   use 'bronson/vim-trailing-whitespace' -- highlight trailing spaces
@@ -12,6 +10,8 @@ return require('packer').startup(function()
   use 'gruvbox-community/gruvbox' -- colorscheme
   use 'easymotion/vim-easymotion'
   use 'tpope/vim-repeat'
+  use 'mortepau/codicons.nvim'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use { 'lewis6991/gitsigns.nvim', -- git added/removed in sidebar + inline blame
     requires = { 'nvim-lua/plenary.nvim' },
@@ -21,7 +21,10 @@ return require('packer').startup(function()
       })
     end
   }
-
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   -- general dev
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'  -- use LspInstall 'language'
@@ -30,9 +33,20 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  use 'nvim-treesitter/nvim-treesitter-angular'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'scrooloose/nerdcommenter' -- commenting shortcuts
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          require("lspsaga").setup({})
+      end,
+      requires = {
+          {"nvim-tree/nvim-web-devicons"},
+          -- Requires markdown and markdown_inline parser
+          {"nvim-treesitter/nvim-treesitter"}
+      }
+  })
 
    require'nvim-treesitter.configs'.setup {
      ensure_installed = "all",
@@ -46,7 +60,6 @@ return require('packer').startup(function()
         virtual_text = false
       }
   )
-  
  -- require'lspsaga'.init_lsp_saga {
     -- error_sign = '!',
     -- warn_sign = '^',

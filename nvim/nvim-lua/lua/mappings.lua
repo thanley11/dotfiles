@@ -68,16 +68,20 @@ nmap("<leader>hh", "<cmd>Telescope help_tags<cr>")
 
 -- LSP
 nmap('K', '<cmd>Lspsaga hover_doc<cr>')
-imap('<C-k>', '<cmd>Lspsaga hover_doc<cr>')
+imap('<C-k>', '<cmd>Lspsaga signature_help<cr>')
 nmap('gh', '<cmd>Lspsaga lsp_finder<cr>')
 nmap('<C-e>', '<cmd>Lspsaga show_line_diagnostics<CR>')
+nmap('gp', '<cmd>Lspsaga preview_definition<cr>')
+nmap('gr', '<cmd>Lspsaga rename<cr>')
+nmap('<C-j>', '<cmd>Lspsaga diagnostic_jump_next<cr>')
 
 -- git
 nmap('<C-g>', '<cmd>GitMessenger<cr>')
 
 -- from old vimrc
 nmap("YY", "\"+y<CR>")
-xnoremap("<leader>p", "\"_dP")
+--xnoremap("<leader>p", "\"_dP")
+
 --cnorea("W!", "w!")
 --
 
