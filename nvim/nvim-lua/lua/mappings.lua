@@ -80,10 +80,6 @@ nmap('<C-g>', '<cmd>GitMessenger<cr>')
 
 -- from old vimrc
 nmap("YY", "\"+y<CR>")
---xnoremap("<leader>p", "\"_dP")
-
---cnorea("W!", "w!")
---
 
 --[[cnoreabbrev Q! q!]]
 --[[cnoreabbrev Qall! qall!]]

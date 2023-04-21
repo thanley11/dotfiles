@@ -28,9 +28,13 @@ alias gd='git diff'
 alias gp='git push'
 alias gacm='git add -A && git commit -m'
 alias glog='git log'
+alias diff="nvim - '+DiffviewOpen develop'"
+alias diffh="nvim - '+DiffviewFileHistory $1'"
 
 # Bookmarks
 alias dev='cd ~/dev_projects && ls -lA'
+alias aliases='cd ~/.dotfiles && nvim .aliases'
+alias config='cd ~/.dotfiles'
 alias doc='cd ~/Documents && ls -lA'
 alias dl='cd ~/Downloads && ls -lA'
 
@@ -47,4 +51,9 @@ d='dirs -v | head -10'
 9='cd -9'
 
 alias vim='nvim'
-alias mpvr='mpv --script=/home/tom/Videos/360plugin.lua --script-opts=360plugin-enabled=yes '
+
+alias azc='az repos pr checkout --id $(az repos pr list --output table| fzf | cut -d " " -f1)'
+
+#development
+alias syncui="tmux attach-session -t syncui"
+alias nrs="npm run serve-local"

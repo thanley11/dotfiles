@@ -1,8 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Themes.
-ZSH_THEME="oxide"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Case-sensitive completion.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -33,7 +40,7 @@ source ~/.aliases
 #source ~/.aliases_private
 
 # Tracks your most used directories, based on frecency with z.
-source ~/.oh-my-zsh/plugins/z/z.sh
+source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 # dircolors.
 if [ -x "$(command -v dircolors)" ]; then
@@ -41,9 +48,9 @@ if [ -x "$(command -v dircolors)" ]; then
 fi
 
 # fzf key bindings.
-if [ -x "$(command -v fzf)" ]; then
-    source ~/.fzf/shell/key-bindings.zsh
-fi
+#if [ -x "$(command -v fzf)" ]; then
+    #source ~/.fzf/shell/key-bindings.zsh
+#fi
 
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
@@ -65,3 +72,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/tom/perl5"; export PERL_MM_OPT;
 bindkey -v
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+(( ! ${+functions[p10k]} )) || p10k finalize

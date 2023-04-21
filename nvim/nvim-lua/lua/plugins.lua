@@ -28,6 +28,8 @@ return require('packer').startup(function()
   -- general dev
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'  -- use LspInstall 'language'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/eslint.nvim'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-vsnip'

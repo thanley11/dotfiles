@@ -54,7 +54,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>b', '<cmd>lua vim.lsp.buf.format({async=false})<cr>', opts)
 end
 
 -- use a loop to conveniently call 'setup' on multiple servers and
