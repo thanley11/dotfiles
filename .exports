@@ -68,3 +68,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$PATH:$HOME/.cargo/bin"
+export AUDIO_IN='/home/tom/Downloads/toedit/audio/in'
+export AUDIO_OUT='/home/tom/Downloads/toedit/audio/out'
+export MODEL_DIRECTORY='/home/tom/Downloads/toedit/audio/models'
+export HSA_OVERRIDE_GFX_VERSION=10.3.0 #10.1.0

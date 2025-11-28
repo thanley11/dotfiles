@@ -68,7 +68,7 @@ nmap("<leader>hh", "<cmd>Telescope help_tags<cr>")
 
 -- LSP
 nmap('K', '<cmd>Lspsaga hover_doc<cr>')
-imap('<C-k>', '<cmd>Lspsaga signature_help<cr>')
+imap('<C-k>', '<cmd>Lspsaga hover_doc<cr>')
 nmap('gh', '<cmd>Lspsaga lsp_finder<cr>')
 nmap('<C-e>', '<cmd>Lspsaga show_line_diagnostics<CR>')
 nmap('gp', '<cmd>Lspsaga preview_definition<cr>')

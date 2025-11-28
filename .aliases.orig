@@ -51,11 +51,14 @@ d='dirs -v | head -10'
 9='cd -9'
 
 alias vim='nvim'
+<<<<<<< HEAD
+
 alias azc='az repos pr checkout --id $(az repos pr list --output table| fzf | cut -d " " -f1)'
 
 #development
 alias syncui="tmux attach-session -t syncui"
 alias nrs="npm run serve-local"
+=======
 alias mpvr='mpv --script=/home/tom/Videos/360plugin.lua --script-opts=360plugin-enabled=yes '
 # Function that renames a file by adding a suffix before the extension
 
@@ -101,3 +104,4 @@ rnm() {
 
 # Enable filename tab completion
 complete -f -o default rnm
+>>>>>>> c8ea044 (Fixing nvim config, adding sway config, adding mpv addons)

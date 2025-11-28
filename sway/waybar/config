@@ -1,0 +1,49 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["volume", "battery", "cpu", "disk", "network"],
+    "modules-right": ["clock"],
+    "font": "monospace 12",
+    "colors": {
+        "background": "#222222",
+        "foreground": "#BBBBBB",
+        "good": "#BBBBBB",
+        "bad": "#CC1616",
+        "degraded": "#55858E"
+    },
+    "battery": {
+        "format": "⛀: {capacity}%",
+        "format-charging": "⚡ {capacity}%",
+        "critical": 10
+    },
+    "cpu": {
+        "format": "⍅: {usage}%"
+    },
+    "disk": {
+        "/": {
+            "format": "Ὓ {avail}:/",
+            "threshold-type": "gbytes_avail",
+            "low-threshold": 4
+        }
+    },
+    "volume": {
+        "format": "♪: {volume}%",
+        "sink": 1,
+        "tooltip": false
+    },
+    "network": {
+        "ethernet": {
+            "interface": "enp5s0",
+            "format-up": "E: {ipaddr}",
+            "format-down": "E: down"
+        },
+        "wireless": {
+            "interface": "wlan0",
+            "format-up": "W: {ipaddr}",
+            "format-down": "W: down"
+        }
+    },
+    "clock": {
+        "format": "%h-%d %H:%M ☰"
+    }
+}

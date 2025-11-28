@@ -1,0 +1,178 @@
+# Sway config converted from i3
+
+# Mod key
+set $mod Mod4
+
+# Font
+font pango:monospace 18
+
+# Floating modifier
+floating_modifier $mod
+
+# Default borders
+default_border none
+default_floating_border none
+
+# Start terminal
+bindsym $mod+Return exec alacritty
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Application launcher
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -font "System San Francisco Display 20"
+
+# Focus movement
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Splitting
+bindsym $mod+Shift+z splith
+bindsym $mod+Shift+v splitv
+
+# Fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Layouts
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# Floating toggle
+bindsym $mod+Shift+space floating toggle
+
+# Focus mode toggle
+bindsym $mod+space focus mode_toggle
+
+# Parent/child focus
+bindsym $mod+a focus parent
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Workspaces
+set $workspace1 "1: Kodi"
+set $workspace2 "2: Brave"
+set $workspace3 "3: Files"
+set $workspace4 "4: Terminal"
+set $workspace5 "5: Video"
+set $workspace6 "6: Deluge"
+set $workspace7 "7: Pavucontrol"
+set $workspace8 "8: Chrome"
+set $workspace9 "9: Nicotine"
+set $workspace10 "10: Music"
+
+# Switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# Assign apps to workspaces
+assign [app_id="Kodi"] $workspace1
+assign [app_id="Brave"] $workspace2
+assign [app_id="Nemo"] $workspace3
+assign [app_id="Terminator"] $workspace4
+assign [app_id="mpv"] $workspace5
+assign [app_id="Deluge"] $workspace6
+assign [app_id="Pavucontrol"] $workspace7
+assign [app_id="Chromium"] $workspace8
+assign [app_id="nicotine"] $workspace9
+assign [app_id="Clementine"] $workspace10
+
+# Reload and exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+# Resize mode
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Bar
+bar {
+    status_command i3status
+    font pango:DejaVu Sans Mono, Awesome 15
+}
+
+# Lock screen
+bindsym $mod+Shift+x exec swaylock -c 000000
+
+# Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Brightness (replace xbacklight with brightnessctl)
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+# Media keys
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Startup programs
+exec_always --no-startup-id swaybg -i ~/Pictures/Lombok.jpg -m fill
+exec_always --no-startup-id xmodmap ~/.xmodmap  # optional; may need adjustment for Wayland
+exec --no-startup-id nemo
+exec --no-startup-id kodi
+exec --no-startup-id deluge
+exec --no-startup-id brave
+exec --no-startup-id openrgb --startminimized
+exec --no-startup-id blueman-applet
+# Launch Waybar
+exec_always --no-startup-id waybar
+
+# Output configuration (replace xrandr)
+output HDMI-0 resolution 3840x2160 position 0,0
+output DP-0 disable
+output DP-1 disable
+

@@ -1,0 +1,31 @@
+* {
+    font-family: monospace;
+    font-size: 14px;
+    color: #BBBBBB;
+    background: #222222;
+}
+
+#volume {
+    color: #BBBBBB;
+}
+
+#battery {
+    color: #55858E;
+}
+
+#cpu {
+    color: #BBBBBB;
+}
+
+#disk {
+    color: #BBBBBB;
+}
+
+#network {
+    color: #BBBBBB;
+}
+
+#clock {
+    color: #BBBBBB;
+}
+
