@@ -35,7 +35,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/nvim-treesitter'
   use 'scrooloose/nerdcommenter' -- commenting shortcuts
   use({
       "glepnir/lspsaga.nvim",
@@ -50,12 +50,12 @@ return require('packer').startup(function()
       }
   })
 
-   require'nvim-treesitter.configs'.setup {
-     ensure_installed = "all",
-     highlight = {
-       enable = true
-     }
-   }
+  require('nvim-treesitter.configs').setup {
+  ensure_installed = { "html", "json", "lua", "python", "bash", "typescript" },
+  auto_install = false,       -- disables auto-install of missing parsers
+  sync_install = false,
+  highlight = { enable = true },
+}
 
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
