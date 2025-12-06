@@ -31,7 +31,7 @@ hide_edge_borders both
 new_window none
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,17 +59,18 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
+#i3-msg move workspace to output up
+
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
+bindsym $mod+Shift+Left move workspace to output left
+bindsym $mod+Shift+Down move workspace to output down
+bindsym $mod+Shift+Up move workspace to output up
+bindsym $mod+Shift+Right move workspace to output right
 
 # splitting horiZontal or Vertical
 bindsym $mod+Shift+z split h
@@ -104,7 +105,7 @@ set $workspace1 "1:  Terminal"
 set $workspace2 "2: Firefox"
 set $workspace3 "3: Files"
 set $workspace4 "4: Chrome"
-set $workspace5 "5: Kodi"
+set $workspace5 "5: FreeTube"
 set $workspace6 "6: Video"
 set $workspace7 "7: Code"
 set $workspace10 "10: Music"
@@ -138,10 +139,10 @@ assign [class="Terminal"]   $workspace1
 assign [class="firefox"]    $workspace2
 assign [class="Nautilus"]   $workspace3
 assign [class="Chromium"]   $workspace4
-assign [class="Kodi"]       $workspace5
+assign [class="FreeTube"]   $workspace5
 assign [class="mpv"]        $workspace6
 assign [class="Code"]       $workspace7
-assign [class="Clementine"] $workspace10
+assign [class="Strawberry"] $workspace10
 # Install xorg-xprop, then run xprop and click on window
 # Look for WM_CLASS(STRING) = "code", "Code" <- Second value
 # reload the configuration file
@@ -205,32 +206,35 @@ bindsym XF86AudioPrev exec playerctl previous
 #Program Related
 exec xrdb ~/.Xresources
 exec_always --no-startup-id xmodmap ~/.xmodmap
-exec --no-startup-id /usr/bin/xfce4-power-manager
+#exec --no-startup-id /usr/bin/xfce4-power-manager
+
 exec picom -CGb
 exec --no-startup-id redshift
 exec --no-startup-id /usr/bin/blueman-applet # Bluetooth Manager
 exec --no-startup-id /usr/bin/caffeine #Screensaver disable
 exec --no-startup-id /usr/bin/cmst -m # Wifi applet minimized
+exec --no-startup-id /usr/bin/caffeine-indicator # Keep Screen Awake applet
 
 #exec nautilus
 #exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill  /home/tom/Pictures/Lombok.jpg
+exec --no-startup-id feh --bg-fill  /home/tom/Pictures/Madeira.jpg
 bindsym $mod+Shift+f exec firefox
 bindsym --release Insert exec scrot -s "/home/tom/Pictures/$(date '%B %d %A - %H:%M').png"
 bindsym Shift+Insert exec scrot -u "/home/tom/Pictures/$(date '+%A %B %d - %H:%M').png"
 ## Manual management of external displays
 ## Set the shortcuts and what they do
-set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile, (t) Top, (b) Bottom
-mode "$mode_display" {
-    bindsym d exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
-    bindsym m exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
-    bindsym s exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1366x768 --pos 288x1200 --rotate normal --output DP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off, mode "Default"
-    bindsym t exec  i3-msg move workspace to output up
-    bindsym b exec  i3-msg move workspace to output down
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#set $mode_display Ext Screen (d) Docked, (s) Stacked, (m) Mobile, (t) Top, (b) Bottom
+#mode "$mode_display"{
+    #bindsym m exec --no-startup-id /home/tom/Scripts/.monitor-switch.sh mobile
+    #bindsym s exec --no-startup-id /home/tom/Scripts/.monitor-switch.sh both
+    #bindsym t exec  i3-msg move workspace to output up
+    #bindsym b exec  i3-msg move workspace to output down
+    ## back to normal: Enter or Escape
+    #bindsym Return mode "default"
+    #bindsym Escape mode "default"
+#}
 # Declare here the shortcut to bring the display selection menu
-bindsym $mod+x mode "$mode_display"
+#bindsym $mod+x mode "$mode_display"
 
+bindsym $mod+x exec --no-startup-id /home/tom/Scripts/monitor-switch.sh
+bindsym $mod+backslash; exec --no-startup-id /home/tom/Scripts/swap-screen.sh
