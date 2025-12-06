@@ -1,4 +1,4 @@
-# Initialize $PATH with system and user binaries.
+#Initialize $PATH with system and user binaries.
 export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/.gem/bin:$HOME/.local/bin"
 
 # Locale.
@@ -6,7 +6,7 @@ export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 
 # Term.
-export TERM="xterm-256color"
+export TERM="xterm-kitty"
 
 # Default Editor.
 export EDITOR="subl"

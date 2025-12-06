@@ -11,7 +11,12 @@ return require('packer').startup(function()
   use 'easymotion/vim-easymotion'
   use 'tpope/vim-repeat'
   use 'mortepau/codicons.nvim'
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = {
+      enhanced_diff_hl = true
+    }
+  }
 
   use { 'lewis6991/gitsigns.nvim', -- git added/removed in sidebar + inline blame
     requires = { 'nvim-lua/plenary.nvim' },
@@ -80,7 +85,7 @@ return require('packer').startup(function()
   use 'tpope/vim-surround' -- surround characters shortcuts
   use 'tpope/vim-vinegar' -- file browser
   use 'kyazdani42/nvim-web-devicons' -- icons when searching
-  
+
   -- testing
   use 'kassio/neoterm' -- terminal wrapper
   use 'janko-m/vim-test' -- testing commands

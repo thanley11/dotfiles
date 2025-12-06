@@ -62,7 +62,7 @@ vim.o.splitright = true -- when splitting vertically, mnove coursor to right pan
 
 -- Find files using Telescope command-line sugar.
 nmap("<C-p>", "<cmd>Telescope find_files<cr>")
-nmap("<leader>f", "<cmd>Telescope live_grep<cr>")
+nmap("<leader>f", "<cmd>Telescope live_grep glob_pattern=*.{ts,py,json,html} <cr>")
 nmap("<leader>bb", "<cmd>Telescope buffers<cr>")
 nmap("<leader>hh", "<cmd>Telescope help_tags<cr>")
 
@@ -102,3 +102,6 @@ vmap("<C-c>", '"+yi')
 vmap("<C-x>", '"+c')
 vmap("<C-v>", 'c<ESC>"+p')
 imap("<C-v>", '<C-r><C-o>+')
+
+nmap("<F3>", ":mksession! /home/tom/.vimsessions/.vimsession <cr>")
+nmap("<F4>", ":source /home/tom/.vimsessions/.vimsession <cr>")
